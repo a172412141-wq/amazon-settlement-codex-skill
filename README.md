@@ -1,103 +1,152 @@
-# Amazon Settlement PDF → Excel 自动填表 Codex Skill
+# Amazon Settlement PDF → 数据表自动生成
 
-这个仓库只保存**整理流程和本地自动化脚本**，用于把 Amazon Settlement PDF 结算报告中的核心字段填入既有 Excel 表格。
+这个仓库只保存**整理流程和本地自动化脚本**。现在默认流程已经简化为：
+
+```text
+输入 Amazon Settlement PDF → 自动生成 Excel 数据表
+```
+
+不再强制需要你提供原 Excel 模板。
 
 ## 数据边界
 
 仓库不保存业务信息。不要提交：
 
 - Amazon PDF 原始文件
-- Excel 模板或已填 Excel
-- 审计 CSV
-- 汇率缓存或导出结果
+- 生成的 Excel / CSV
+- 审计结果
+- 汇率缓存
 - 真实店铺名、公司主体、银行信息、税务信息
 
 `.gitignore` 已默认排除这些文件。脚本只在本地处理文件。
 
-## 处理字段
+## 生成字段
 
-- income / Einnahmen / Ingresos / Entrate / Recettes
-- expenses / Ausgaben / Gastos / Spese / Dépenses
-- transfer to bank account / Übertragungen / Transferencias / Trasferimenti / Virements
-- tax / Steuer / Impuestos / Imposte / Taxes
+自动生成的数据表包含：
+
+- 月份
+- 平台
+- 店铺(按站点)
+- 注册主体(公司名字)
+- 亚马逊结算报告文件名
 - 币种
-- 月初人民币汇率中间价
-- 人民币金额
+- 汇率日期
+- 汇率
+- 店铺销售额（原币）
+- 销售税 Tax（原币）
+- 店铺销售额（原币 包含 TAX）
+- 销售费用（原币）
+- 账单回款额（原币）
+- 店铺销售额（人民币）
+- 销售税 Tax（人民币）
+- 店铺销售额（人民币 包含 TAX）
+- 销售费用（人民币）
+- 账单回款额（人民币）
+- PDF 原始 expenses
+- PDF 原始 transfer
+- 状态
+- 备注
 
-费用和回款在 Amazon PDF 中经常显示为负数；写入 Excel 时默认按业务口径写成正数，同时在审计 CSV 中保留 PDF 原始符号，方便复核。
+费用和回款在 Amazon PDF 中经常显示为负数；输出表按业务口径写成正数，同时保留 PDF 原始 expenses / transfer 方便复核。
 
-## 目录结构
+## 最简单使用方式
 
-```text
-project/
-  .agents/skills/amazon-settlement-xlsx/
-  pdfs/                 # 本地放 PDF，不提交
-  template.xlsx          # 本地放 Excel，不提交
-  store_mapping.local.csv # 本地映射，不提交，可选
-```
-
-## 安装
+### 1. 安装依赖
 
 ```bash
 python -m pip install -r .agents/skills/amazon-settlement-xlsx/scripts/requirements.txt
 ```
 
-## 第一步：先 dry-run
+### 2. 把 PDF 放进 `pdfs/` 文件夹
 
-```bash
-python .agents/skills/amazon-settlement-xlsx/scripts/run.py \
-  --workbook ./template.xlsx \
-  --pdf-dir ./pdfs \
-  --output ./template_filled.xlsx \
-  --mapping ./store_mapping.local.csv \
-  --dry-run
+```text
+pdfs/
+  xxx_Standard-2026-04.pdf
+  yyy_Standard-2026-04.pdf
 ```
 
-检查生成的 `template_filled.audit.csv`，确认 PDF 文件名、月份、币种、income、expenses、transfer、tax、汇率日期和写入行都正确。
+### 3. 一键生成 Excel 数据表
 
-## 第二步：正式写入
+Mac / Linux：
 
 ```bash
-python .agents/skills/amazon-settlement-xlsx/scripts/run.py \
-  --workbook ./template.xlsx \
-  --pdf-dir ./pdfs \
-  --output ./template_filled.xlsx \
-  --mapping ./store_mapping.local.csv
+./generate_table.sh
 ```
 
-默认不会覆盖原始 Excel。不要使用 `--in-place`，除非已经备份。
+Windows：
 
-## 本地店铺映射文件
+```bat
+generate_table.bat
+```
 
-按示例复制一份到本地：
+默认输出：
+
+```text
+amazon_settlement_table.xlsx
+```
+
+## 指定 PDF 或输出文件
+
+读取某个文件夹：
 
 ```bash
-cp examples/store_mapping.example.csv store_mapping.local.csv
+python .agents/skills/amazon-settlement-xlsx/scripts/pdf_to_table.py ./pdfs --output ./result.xlsx
+```
+
+读取单个 PDF：
+
+```bash
+python .agents/skills/amazon-settlement-xlsx/scripts/pdf_to_table.py ./pdfs/report.pdf --output ./result.xlsx
+```
+
+同时生成 CSV：
+
+```bash
+python .agents/skills/amazon-settlement-xlsx/scripts/pdf_to_table.py ./pdfs --output ./result.xlsx --csv ./result.csv
+```
+
+## 本地店铺映射，可选
+
+不想让脚本只从文件名推断店铺/主体时，可以在本地创建：
+
+```text
+store_mapping.local.csv
 ```
 
 格式：
 
 ```csv
 store_site,registered_company,display_name,currency,notes
-DE-SHOP,Company Placeholder,Shop Placeholder,EUR,example only
+DE-SHOP,Company Placeholder,Shop Placeholder,EUR,local only
 ```
 
 真实映射只保存在本地，不要提交。
+
+## 汇率规则
+
+脚本按“人民币汇率中间价”处理：
+
+- 目标日期：结算月份的每月 1 号。
+- 如果 1 号没有交易数据，则使用之前最近一个交易日。
+- 汇率缓存保存在本地 `.cache/`，不会提交到 GitHub。
 
 ## Codex 使用提示
 
 在 Codex 中打开该项目目录后，可以输入：
 
 ```text
-使用 amazon-settlement-xlsx skill：读取 pdfs 文件夹内所有 Amazon 结算 PDF，按现有 Excel 模板填写 income、expenses、transfer to bank account、tax、币种、月初汇率和人民币金额。先 dry-run，生成 audit CSV 让我复核，不要改任何格式，不要提交任何业务文件。
+使用 amazon-settlement-xlsx skill：读取 pdfs 文件夹内所有 Amazon 结算 PDF，直接生成数据表，不需要 Excel 模板。字段包括 income、expenses、transfer to bank account、tax、币种、月初汇率和人民币金额。不要提交任何 PDF、Excel、CSV 或真实业务信息。
 ```
 
-## 复核要求
+## 原模板填表模式
 
-每次正式写入前必须核对：
+如果以后仍然需要写入已有 Excel 模板，可以继续使用旧脚本：
 
-1. PDF summary 区金额与 audit CSV 完全一致。
-2. expenses 和 transfer 的 PDF 原始负数已按表格业务口径写成正数。
-3. Excel 原有公式、格式、列宽、样式没有被改动。
-4. 汇率日期按“每月 1 号；无交易数据则回退到上月最后一个交易日”处理。
-5. 每个 PDF 只写入一行，没有重复写入。
+```bash
+python .agents/skills/amazon-settlement-xlsx/scripts/run.py \
+  --workbook ./template.xlsx \
+  --pdf-dir ./pdfs \
+  --output ./template_filled.xlsx
+```
+
+默认推荐使用新的 PDF-only 方式。
