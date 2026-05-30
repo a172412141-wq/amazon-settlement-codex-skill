@@ -1,0 +1,270 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Amazon Settlement PDF 数据表工具</title>
+  <style>
+    :root { --bg:#f6f7fb; --card:#fff; --text:#111827; --muted:#6b7280; --line:#d1d5db; --blue:#2563eb; --red:#991b1b; --redbg:#fee2e2; --green:#166534; --greenbg:#dcfce7; }
+    * { box-sizing:border-box; }
+    body { margin:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,"PingFang SC","Microsoft YaHei",sans-serif; background:var(--bg); color:var(--text); }
+    .wrap { max-width:980px; margin:42px auto; padding:0 18px; }
+    .card { background:var(--card); border-radius:18px; box-shadow:0 12px 40px rgba(15,23,42,.08); padding:28px; }
+    h1 { margin:0 0 8px; font-size:28px; }
+    h2 { margin-top:28px; font-size:18px; }
+    p { color:var(--muted); line-height:1.7; }
+    .login { max-width:430px; margin:12vh auto; }
+    label { display:block; margin-top:18px; font-weight:650; }
+    input, textarea { width:100%; margin-top:8px; padding:12px 14px; border:1px solid var(--line); border-radius:10px; background:#fff; font-size:15px; }
+    textarea { min-height:74px; resize:vertical; }
+    button { border:0; border-radius:10px; padding:12px 18px; background:var(--blue); color:#fff; cursor:pointer; font-size:15px; }
+    button:disabled { opacity:.55; cursor:not-allowed; }
+    .row { display:flex; gap:12px; flex-wrap:wrap; align-items:center; margin-top:18px; }
+    .small { font-size:13px; color:var(--muted); }
+    .notice { background:#eff6ff; border:1px solid #bfdbfe; color:#1e3a8a; padding:12px 14px; border-radius:12px; margin:18px 0; }
+    .warn { background:#fff7ed; border:1px solid #fed7aa; color:#9a3412; padding:12px 14px; border-radius:12px; margin:18px 0; }
+    .err { background:var(--redbg); border:1px solid #fecaca; color:var(--red); padding:12px 14px; border-radius:12px; margin:18px 0; white-space:pre-wrap; }
+    .ok { background:var(--greenbg); border:1px solid #bbf7d0; color:var(--green); padding:12px 14px; border-radius:12px; margin:18px 0; }
+    table { border-collapse:collapse; width:100%; margin-top:18px; font-size:13px; }
+    th, td { border:1px solid #e5e7eb; padding:8px; text-align:left; vertical-align:top; }
+    th { background:#f3f4f6; position:sticky; top:0; }
+    .tablebox { overflow:auto; max-height:440px; border-radius:10px; }
+    .hidden { display:none; }
+    code { background:#f3f4f6; padding:2px 5px; border-radius:5px; }
+  </style>
+</head>
+<body>
+  <div id="login" class="wrap login">
+    <div class="card">
+      <h1>Amazon Settlement 数据表工具</h1>
+      <p>输入密码后使用。处理过程在浏览器本地完成，不上传 PDF 到服务器。</p>
+      <label>密码</label>
+      <input id="password" type="password" autocomplete="current-password" placeholder="请输入密码">
+      <div class="row"><button id="loginBtn">进入工具</button></div>
+      <div id="loginError" class="err hidden">密码错误。</div>
+    </div>
+  </div>
+
+  <div id="app" class="wrap hidden">
+    <div class="card">
+      <h1>Amazon Settlement PDF → Excel 数据表</h1>
+      <p>上传一个或多个 Amazon Settlement PDF，自动提取 income、expenses、transfer、tax，并生成 Excel 数据表。</p>
+      <div class="notice">GitHub Pages 静态版：PDF 在浏览器内解析，Excel 在浏览器内生成。仓库和 GitHub 不保存上传文件。</div>
+      <div class="warn">前端密码只适合内部轻量使用，不等同于服务器级鉴权。页面链接不要公开传播。</div>
+
+      <label>PDF 文件</label>
+      <input id="pdfInput" type="file" accept="application/pdf,.pdf" multiple>
+      <p class="small">建议文件名包含站点和月份，例如 <code>CRZX-DE_Standard-2026-04.pdf</code>。</p>
+
+      <label>手动汇率，可选</label>
+      <textarea id="manualRates" placeholder="例如：EUR=7.916\nUSD=7.105\nEUR:2026-04-01=7.916"></textarea>
+      <p class="small">纯 GitHub Pages 没有后端代理，自动读取 ChinaMoney 可能被浏览器 CORS 拦截。取不到汇率时，原币数据仍会生成；人民币列留空。需要稳定人民币计算时，在这里填写汇率。</p>
+
+      <div class="row">
+        <button id="processBtn">生成 Excel 数据表</button>
+        <button id="csvBtn" disabled>下载 CSV</button>
+        <button id="xlsxBtn" disabled>下载 Excel</button>
+        <button id="logoutBtn" style="background:#6b7280">退出</button>
+      </div>
+
+      <div id="status" class="notice hidden"></div>
+      <div id="error" class="err hidden"></div>
+      <div id="preview" class="tablebox hidden"></div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@4.10.38/build/pdf.min.mjs" type="module"></script>
+  <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+  <script type="module">
+    import * as pdfjsLib from 'https://cdn.jsdelivr.net/npm/pdfjs-dist@4.10.38/build/pdf.min.mjs';
+    pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdn.jsdelivr.net/npm/pdfjs-dist@4.10.38/build/pdf.worker.min.mjs';
+
+    const PASSWORD_HASH = 'f6c0ae9dd8375b102e36de598f16c84d1de8b812fef958f0aaa3de7a0900df6c';
+    const HEADERS = [
+      '月份','平台','店铺(按站点)','注册主体(公司名字)','亚马逊结算报告','币种','汇率日期','汇率',
+      '店铺销售额（原币）','销售税Tax（原币）','店铺销售额（原币 包含TAX）','销售费用（原币）','账单回款额（原币）',
+      '店铺销售额（人民币）','销售税Tax（人民币）','店铺销售额（人民币 包含TAX）','销售费用（人民币）','账单回款额（人民币）',
+      'PDF原始expenses','PDF原始transfer','状态','备注'
+    ];
+    const LABELS = {
+      income: ['income','einnahmen','ingresos','entrate','revenus','recettes','inkomsten','przychody','receitas','收入','売上','収入'],
+      expenses: ['expenses','ausgaben','gastos','spese','dépenses','depenses','kosten','uitgaven','wydatki','despesas','支出','費用'],
+      tax: ['tax','steuer','impuesto','imposte','taxes','belasting','podatek','imposto','税'],
+      transfer: ['transfers','transfer to bank account','übertragungen','uebertragungen','überweisungen auf bankkonto','ueberweisungen auf bankkonto','transferencias','trasferimenti','virements','transferts','overboekingen','przelewy','bank account','bankkonto','回款','振込','銀行','转账','轉賬']
+    };
+    const CURRENCY_TEXT = [
+      [/\bEuro\b|\bEUR\b|euros/i, 'EUR'], [/USD|US Dollars?|U\.S\. Dollars?/i, 'USD'], [/GBP|British Pounds?|Pound Sterling/i, 'GBP'],
+      [/MXN|Mexican Pesos?/i, 'MXN'], [/CAD|Canadian Dollars?/i, 'CAD'], [/AUD|Australian Dollars?/i, 'AUD'], [/JPY|Japanese Yen|Yen/i, 'JPY'],
+      [/PLN|Polish Zloty|Polish Złoty/i, 'PLN'], [/SEK|Swedish Krona/i, 'SEK'], [/TRY|Turkish Lira/i, 'TRY'], [/SGD|Singapore Dollars?/i, 'SGD']
+    ];
+    const CURRENCY_FROM_SITE = {US:'USD',CA:'CAD',MX:'MXN',BR:'BRL',UK:'GBP',GB:'GBP',DE:'EUR',FR:'EUR',IT:'EUR',ES:'EUR',NL:'EUR',BE:'EUR',IE:'EUR',SE:'SEK',PL:'PLN',TR:'TRY',JP:'JPY',AU:'AUD',SG:'SGD',AE:'AED',SA:'SAR',IN:'INR'};
+    const MONTHS = {jan:1,january:1,januar:1,janvier:1,enero:1,gennaio:1,feb:2,february:2,februar:2,fevrier:2,février:2,febrero:2,febbraio:2,mar:3,march:3,marz:3,märz:3,maerz:3,mars:3,marzo:3,apr:4,april:4,avril:4,abril:4,aprile:4,may:5,mai:5,mayo:5,maggio:5,jun:6,june:6,juni:6,juin:6,junio:6,giugno:6,jul:7,july:7,juli:7,juillet:7,julio:7,luglio:7,aug:8,august:8,aout:8,août:8,agosto:8,sep:9,sept:9,september:9,septembre:9,septiembre:9,settembre:9,oct:10,october:10,okt:10,oktober:10,octobre:10,octubre:10,ottobre:10,nov:11,november:11,novembre:11,noviembre:11,dec:12,december:12,dez:12,dezember:12,decembre:12,décembre:12,diciembre:12,dicembre:12};
+
+    let lastRows = [];
+
+    function $(id){ return document.getElementById(id); }
+    function show(id, text='') { const el=$(id); if(text) el.textContent=text; el.classList.remove('hidden'); }
+    function hide(id) { $(id).classList.add('hidden'); }
+    function norm(s){ return String(s||'').toLowerCase().replace(/\s+/g,' ').replace(/ü/g,'u').replace(/ä/g,'a').replace(/ö/g,'o').replace(/ß/g,'ss').trim(); }
+    async function sha256(text){ const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(text)); return Array.from(new Uint8Array(buf)).map(b=>b.toString(16).padStart(2,'0')).join(''); }
+    function parseAmount(raw){
+      let s = String(raw||'').replace(/\u00a0/g,' ').replace(/\s/g,'').trim();
+      let neg = false;
+      if(s.startsWith('(') && s.endsWith(')')) { neg = true; s = s.slice(1,-1); }
+      if(s.startsWith('-') || s.startsWith('−')) { neg = true; s = s.slice(1); }
+      s = s.replace(/[^0-9,\.]/g,'');
+      const lc = s.lastIndexOf(','), ld = s.lastIndexOf('.');
+      if(lc > ld) s = s.replace(/\./g,'').replace(',', '.'); else if(ld > lc) s = s.replace(/,/g,''); else s = s.replace(',', '.');
+      const v = Number(s);
+      if(!Number.isFinite(v)) throw new Error('无法解析金额：' + raw);
+      return neg ? -v : v;
+    }
+    function amountTokens(text){ return String(text).match(/[-−(]?\d{1,3}(?:[.,]\d{3})*(?:[.,]\d{2,4})\)?|[-−(]?\d+(?:[.,]\d{2,4})\)?/g) || []; }
+    function rightmostAmount(rowText){ const tokens = amountTokens(rowText); if(!tokens.length) return null; return parseAmount(tokens[tokens.length-1]); }
+    function containsLabel(rowText, key){ const n = norm(rowText); return LABELS[key].some(l => n.includes(norm(l))); }
+    function extractAmount(rows, key){
+      for(const row of rows){ if(containsLabel(row.text, key)){ const v = rightmostAmount(row.text); if(v !== null) return {value:v, source:row.text}; } }
+      throw new Error('找不到字段：' + key);
+    }
+    function parseMonth(filename, text){
+      let m = filename.match(/(20\d{2})[-_\.](0[1-9]|1[0-2])/);
+      if(m) return `${m[1]}-${m[2]}-01`;
+      m = text.match(/\b([A-Za-zÀ-ÿ]{3,10})\s+\d{1,2},?\s+(20\d{2})\b/);
+      if(m){ const key = norm(m[1]).slice(0,3); if(MONTHS[key]) return `${m[2]}-${String(MONTHS[key]).padStart(2,'0')}-01`; }
+      m = text.match(/\b(20\d{2})[-\/\.](0?[1-9]|1[0-2])[-\/]\d{1,2}\b/);
+      if(m) return `${m[1]}-${String(Number(m[2])).padStart(2,'0')}-01`;
+      return '';
+    }
+    function storeFromFilename(filename){ return filename.replace(/\.pdf$/i,'').replace(/_?Standard[-_].*$/i,'').replace(/[-_]?Standard$/i,''); }
+    function currencyFrom(text, store){
+      for(const [re, cur] of CURRENCY_TEXT){ if(re.test(text)) return cur; }
+      const parts = store.split(/[-_ ]+/).map(x=>x.toUpperCase());
+      for(let i=parts.length-1;i>=0;i--){ if(CURRENCY_FROM_SITE[parts[i]]) return CURRENCY_FROM_SITE[parts[i]]; }
+      return '';
+    }
+    function valueAfterLabel(rows, labels){
+      for(const row of rows){
+        const rt = row.text;
+        const n = norm(rt);
+        if(labels.some(l => n.includes(norm(l)))){
+          const idx = rt.indexOf(':');
+          if(idx >= 0 && rt.slice(idx+1).trim()) return rt.slice(idx+1).trim();
+        }
+      }
+      return '';
+    }
+    function parseManualRates(text){
+      const rates = {};
+      String(text||'').split(/[\n,，;；]+/).map(x=>x.trim()).filter(Boolean).forEach(item => {
+        const [left, right] = item.split('=').map(x=>x.trim());
+        if(!left || !right) return;
+        rates[left.toUpperCase()] = Number(right);
+      });
+      return rates;
+    }
+    function rateFor(currency, monthStart, rates){
+      const exact = `${currency}:${monthStart}`.toUpperCase();
+      if(Number.isFinite(rates[exact])) return {rate: rates[exact], date: monthStart, source:'manual'};
+      if(Number.isFinite(rates[currency])) return {rate: rates[currency], date: monthStart, source:'manual'};
+      return {rate: null, date: '', source:'missing'};
+    }
+    async function extractPdf(file){
+      const data = await file.arrayBuffer();
+      const pdf = await pdfjsLib.getDocument({data}).promise;
+      let allText = '';
+      const rows = [];
+      for(let p=1; p<=pdf.numPages; p++){
+        const page = await pdf.getPage(p);
+        const content = await page.getTextContent();
+        const items = content.items.map(it => ({str: it.str, x: it.transform[4], y: it.transform[5]})).filter(it => it.str && it.str.trim());
+        items.sort((a,b)=> b.y - a.y || a.x - b.x);
+        const buckets = [];
+        for(const it of items){
+          let bucket = buckets.find(b => Math.abs(b.y - it.y) <= 3);
+          if(!bucket){ bucket = {y:it.y, items:[]}; buckets.push(bucket); }
+          bucket.items.push(it);
+        }
+        for(const b of buckets){
+          b.items.sort((a,b)=> a.x - b.x);
+          const line = b.items.map(x=>x.str).join(' ').replace(/\s+/g,' ').trim();
+          if(line){ rows.push({page:p, y:b.y, text:line}); allText += line + '\n'; }
+        }
+      }
+      const summaryIndex = rows.findIndex(r => /summaries|zusammenfassungen|resumen|riepilog|synth|samenvatting|podsumowanie|概要|サマリー/i.test(r.text));
+      const summaryRows = summaryIndex >= 0 ? rows.slice(summaryIndex, Math.min(summaryIndex + 16, rows.length)) : rows.slice(0, 30);
+      const month = parseMonth(file.name, allText);
+      const store = storeFromFilename(file.name);
+      const currency = currencyFrom(allText, store);
+      const income = extractAmount(summaryRows, 'income').value;
+      const expensesRaw = extractAmount(summaryRows, 'expenses').value;
+      let tax = 0, taxNote = '';
+      try { tax = extractAmount(summaryRows, 'tax').value; } catch(e) { taxNote = 'tax not found; use 0'; }
+      const transferRaw = extractAmount(summaryRows, 'transfer').value;
+      const registeredCompany = valueAfterLabel(rows, ['Registered business name','Legal entity name','Eingetragener Firmenname','Ragione sociale','Razón social','Nom légal']);
+      return {fileName:file.name, month, store, registeredCompany, currency, income, tax, incomeWithTax:income + tax, expenses:Math.abs(expensesRaw), transfer:Math.abs(transferRaw), expensesRaw, transferRaw, note:taxNote};
+    }
+    function cny(v, rate){ return Number.isFinite(rate) ? Math.round(v * rate * 100) / 100 : ''; }
+    async function processFiles(){
+      hide('error'); hide('status'); hide('preview');
+      const files = Array.from($('pdfInput').files || []);
+      if(!files.length){ show('error','请先选择 PDF 文件。'); return; }
+      $('processBtn').disabled = true; $('csvBtn').disabled = true; $('xlsxBtn').disabled = true;
+      show('status', `正在处理 ${files.length} 个 PDF...`);
+      const manualRates = parseManualRates($('manualRates').value);
+      const rows = [];
+      for(const file of files){
+        try{
+          const e = await extractPdf(file);
+          const r = rateFor(e.currency, e.month, manualRates);
+          const status = r.rate ? 'OK' : 'RATE_MISSING';
+          const notes = [e.note, r.rate ? '' : '未填写/未取得汇率，人民币列留空'].filter(Boolean).join('; ');
+          rows.push({
+            '月份': e.month, '平台':'亚马逊', '店铺(按站点)': e.store, '注册主体(公司名字)': e.registeredCompany, '亚马逊结算报告': e.fileName,
+            '币种': e.currency, '汇率日期': r.date, '汇率': r.rate || '',
+            '店铺销售额（原币）': e.income, '销售税Tax（原币）': e.tax, '店铺销售额（原币 包含TAX）': e.incomeWithTax,
+            '销售费用（原币）': e.expenses, '账单回款额（原币）': e.transfer,
+            '店铺销售额（人民币）': cny(e.income, r.rate), '销售税Tax（人民币）': cny(e.tax, r.rate), '店铺销售额（人民币 包含TAX）': cny(e.incomeWithTax, r.rate),
+            '销售费用（人民币）': cny(e.expenses, r.rate), '账单回款额（人民币）': cny(e.transfer, r.rate),
+            'PDF原始expenses': e.expensesRaw, 'PDF原始transfer': e.transferRaw, '状态': status, '备注': notes
+          });
+        } catch(err){
+          rows.push({'月份':'','平台':'亚马逊','店铺(按站点)':'','注册主体(公司名字)':'','亚马逊结算报告':file.name,'币种':'','汇率日期':'','汇率':'','店铺销售额（原币）':'','销售税Tax（原币）':'','店铺销售额（原币 包含TAX）':'','销售费用（原币）':'','账单回款额（原币）':'','店铺销售额（人民币）':'','销售税Tax（人民币）':'','店铺销售额（人民币 包含TAX）':'','销售费用（人民币）':'','账单回款额（人民币）':'','PDF原始expenses':'','PDF原始transfer':'','状态':'EXTRACT_FAILED','备注':String(err.message || err)});
+        }
+      }
+      lastRows = rows;
+      renderPreview(rows);
+      $('csvBtn').disabled = false; $('xlsxBtn').disabled = false; $('processBtn').disabled = false;
+      show('status', `处理完成：${rows.length} 行。请先预览，再下载 Excel。`);
+    }
+    function renderPreview(rows){
+      const html = `<table><thead><tr>${HEADERS.map(h=>`<th>${h}</th>`).join('')}</tr></thead><tbody>${rows.map(r=>`<tr>${HEADERS.map(h=>`<td>${r[h] ?? ''}</td>`).join('')}</tr>`).join('')}</tbody></table>`;
+      $('preview').innerHTML = html; show('preview');
+    }
+    function downloadCsv(){
+      const csv = [HEADERS.join(',')].concat(lastRows.map(r => HEADERS.map(h => `"${String(r[h] ?? '').replace(/"/g,'""')}"`).join(','))).join('\n');
+      const blob = new Blob(['\ufeff' + csv], {type:'text/csv;charset=utf-8'});
+      downloadBlob(blob, 'amazon_settlement_table.csv');
+    }
+    function downloadXlsx(){
+      const ws = XLSX.utils.json_to_sheet(lastRows, {header: HEADERS});
+      const wb = XLSX.utils.book_new();
+      XLSX.utils.book_append_sheet(wb, ws, 'Amazon Settlement');
+      XLSX.writeFile(wb, 'amazon_settlement_table.xlsx');
+    }
+    function downloadBlob(blob, name){
+      const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = name; a.click(); setTimeout(()=>URL.revokeObjectURL(a.href), 1000);
+    }
+    $('loginBtn').addEventListener('click', async () => {
+      const ok = await sha256($('password').value || '') === PASSWORD_HASH;
+      if(ok){ sessionStorage.setItem('ok','1'); $('login').classList.add('hidden'); $('app').classList.remove('hidden'); }
+      else show('loginError');
+    });
+    $('password').addEventListener('keydown', e => { if(e.key === 'Enter') $('loginBtn').click(); });
+    $('logoutBtn').addEventListener('click', () => { sessionStorage.removeItem('ok'); location.reload(); });
+    $('processBtn').addEventListener('click', processFiles);
+    $('csvBtn').addEventListener('click', downloadCsv);
+    $('xlsxBtn').addEventListener('click', downloadXlsx);
+    if(sessionStorage.getItem('ok') === '1'){ $('login').classList.add('hidden'); $('app').classList.remove('hidden'); }
+  </script>
+</body>
+</html>
