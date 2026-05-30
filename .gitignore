@@ -1,0 +1,34 @@
+# Business input/output files: never commit
+*.pdf
+*.PDF
+*.xlsx
+*.xlsm
+*.xls
+*.csv
+*.audit.*
+*_filled.*
+*已填*
+
+# Allow placeholder examples only
+!examples/*.example.csv
+
+# Local user configuration
+store_mapping.local.csv
+*.local.csv
+.env
+.env.*
+
+# Logs and caches
+*.log
+*.tmp
+*.cache
+.cache/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# OS/editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
