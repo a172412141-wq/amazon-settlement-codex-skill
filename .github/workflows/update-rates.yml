@@ -1,0 +1,29 @@
+name: Update exchange rates
+
+on:
+  schedule:
+    - cron: '30 2 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update-rates:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install dependencies
+        run: python -m pip install requests
+      - name: Build rates cache
+        run: python tools/update_rates.py
+      - name: Commit updated rates
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: Update static exchange-rate cache
+          file_pattern: site/rates.json
