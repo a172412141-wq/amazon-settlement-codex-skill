@@ -1,6 +1,19 @@
 {
-  "updated_at": null,
-  "source": "ChinaMoney/CFETS",
+  "errors": {
+    "AUD": "Failed to fetch AUD: 403 Client Error: Forbidden for url: https://www.chinamoney.com.cn/ags/ms/cm-u-bk-ccpr/CcprHisNew?startDate=2022-12-18&endDate=2026-08-01&currency=AUD%2FCNY&pageNum=1&pageSize=5000",
+    "CAD": "Failed to fetch CAD: 403 Client Error: Forbidden for url: https://www.chinamoney.com.cn/ags/ms/cm-u-bk-ccpr/CcprHisNew?startDate=2022-12-18&endDate=2026-08-01&currency=CAD%2FCNY&pageNum=1&pageSize=5000",
+    "EUR": "Failed to fetch EUR: 403 Client Error: Forbidden for url: https://www.chinamoney.com.cn/ags/ms/cm-u-bk-ccpr/CcprHisNew?startDate=2022-12-18&endDate=2026-08-01&currency=EUR%2FCNY&pageNum=1&pageSize=5000",
+    "GBP": "Failed to fetch GBP: 403 Client Error: Forbidden for url: https://www.chinamoney.com.cn/ags/ms/cm-u-bk-ccpr/CcprHisNew?startDate=2022-12-18&endDate=2026-08-01&currency=GBP%2FCNY&pageNum=1&pageSize=5000",
+    "JPY": "Failed to fetch JPY: 403 Client Error: Forbidden for url: https://www.chinamoney.com.cn/ags/ms/cm-u-bk-ccpr/CcprHisNew?startDate=2022-12-18&endDate=2026-08-01&currency=JPY%2FCNY&pageNum=1&pageSize=5000",
+    "MXN": "Failed to fetch MXN: 403 Client Error: Forbidden for url: https://www.chinamoney.com.cn/ags/ms/cm-u-bk-ccpr/CcprHisNew?startDate=2022-12-18&endDate=2026-08-01&currency=MXN%2FCNY&pageNum=1&pageSize=5000",
+    "PLN": "Failed to fetch PLN: 403 Client Error: Forbidden for url: https://www.chinamoney.com.cn/ags/ms/cm-u-bk-ccpr/CcprHisNew?startDate=2022-12-18&endDate=2026-08-01&currency=PLN%2FCNY&pageNum=1&pageSize=5000",
+    "SEK": "Failed to fetch SEK: 403 Client Error: Forbidden for url: https://www.chinamoney.com.cn/ags/ms/cm-u-bk-ccpr/CcprHisNew?startDate=2022-12-18&endDate=2026-08-01&currency=SEK%2FCNY&pageNum=1&pageSize=5000",
+    "SGD": "Failed to fetch SGD: 403 Client Error: Forbidden for url: https://www.chinamoney.com.cn/ags/ms/cm-u-bk-ccpr/CcprHisNew?startDate=2022-12-18&endDate=2026-08-01&currency=SGD%2FCNY&pageNum=1&pageSize=5000",
+    "TRY": "Failed to fetch TRY: 403 Client Error: Forbidden for url: https://www.chinamoney.com.cn/ags/ms/cm-u-bk-ccpr/CcprHisNew?startDate=2022-12-18&endDate=2026-08-01&currency=TRY%2FCNY&pageNum=1&pageSize=5000",
+    "USD": "Failed to fetch USD: 403 Client Error: Forbidden for url: https://www.chinamoney.com.cn/ags/ms/cm-u-bk-ccpr/CcprHisNew?startDate=2022-12-18&endDate=2026-08-01&currency=USD%2FCNY&pageNum=1&pageSize=5000"
+  },
+  "rates": {},
   "rule": "For each currency and report month, use the RMB central parity rate on the first calendar day of the month; if unavailable, use the latest trading day before that date.",
-  "rates": {}
+  "source": "ChinaMoney/CFETS RMB central parity rate",
+  "updated_at": "2026-05-30T09:40:38Z"
 }
