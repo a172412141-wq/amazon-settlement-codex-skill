@@ -12,13 +12,34 @@ import json
 import time
 from decimal import Decimal
 from pathlib import Path
-from typing import Any, Dict, Iterable, List, Optional, Tuple
+from typing import Any, Dict, List, Optional, Tuple
 
 import requests
 
 URL = "https://www.chinamoney.com.cn/ags/ms/cm-u-bk-ccpr/CcprHisNew"
 REFERER = "https://www.chinamoney.com.cn/chinese/bkccpr/"
-CURRENCIES = ["USD", "EUR", "GBP", "JPY", "CAD", "AUD", "MXN", "PLN", "SEK", "TRY", "SGD"]
+
+# ChinaMoney / CFETS RMB central parity commonly supports the following currencies.
+# This list intentionally covers all common Amazon settlement currencies that have
+# a ChinaMoney central parity record. Unsupported currencies will be recorded in
+# the errors section instead of stopping the workflow.
+CURRENCIES = [
+    "USD", "EUR", "JPY", "HKD", "GBP", "AUD", "NZD", "SGD", "CHF", "CAD",
+    "MOP", "MYR", "RUB", "ZAR", "KRW", "AED", "SAR", "HUF", "PLN", "DKK",
+    "SEK", "NOK", "TRY", "MXN", "THB",
+    # Extra Amazon / marketplace currencies. ChinaMoney may not publish central
+    # parity for all of these; keep them so missing coverage is explicit.
+    "BRL", "INR", "EGP", "CNY",
+]
+
+# ChinaMoney displays some currencies per 100 units. Store rates as CNY per 1 unit
+# so RMB amount = original currency amount * stored rate.
+QUOTE_UNITS = {
+    "JPY": Decimal("100"),
+    "KRW": Decimal("100"),
+    "HUF": Decimal("100"),
+}
+
 OUTPUT = Path("site/rates.json")
 
 
@@ -63,10 +84,13 @@ def record_value(record: Dict[str, Any]) -> Optional[Decimal]:
 
 
 def pair_for(currency: str) -> str:
-    return "JPY/CNY" if currency == "JPY" else f"{currency}/CNY"
+    return "CNY/CNY" if currency == "CNY" else f"{currency}/CNY"
 
 
 def fetch_records(currency: str, start: dt.date, end: dt.date) -> List[Tuple[dt.date, Decimal]]:
+    if currency == "CNY":
+        return [(start, Decimal("1")), (end, Decimal("1"))]
+
     params = {
         "startDate": start.strftime("%Y-%m-%d"),
         "endDate": end.strftime("%Y-%m-%d"),
@@ -92,14 +116,14 @@ def fetch_records(currency: str, start: dt.date, end: dt.date) -> List[Tuple[dt.
             if isinstance(records, dict):
                 records = records.get("records", [])
             out = []
+            quote_unit = QUOTE_UNITS.get(currency, Decimal("1"))
             for record in records:
                 d = record_date(record)
                 v = record_value(record)
                 if d and v is not None:
-                    if currency == "JPY":
-                        # ChinaMoney commonly quotes 100JPY/CNY. Store 1 JPY/CNY.
-                        v = v / Decimal("100")
-                    out.append((d, v))
+                    out.append((d, v / quote_unit))
+            if not out:
+                raise RuntimeError("no records returned")
             return sorted(out, key=lambda x: x[0])
         except Exception as exc:
             last_error = exc
@@ -117,16 +141,17 @@ def latest_on_or_before(records: List[Tuple[dt.date, Decimal]], target: dt.date)
 def main() -> int:
     today = dt.date.today()
     start = dt.date(today.year - 3, 1, 1)
-    # Include enough future months for settlement files dated slightly ahead.
     if today.month >= 10:
         end = dt.date(today.year + 1, 3, 1)
     else:
+        # Avoid invalid month values when today.month is 10 or later; handled above.
         end = dt.date(today.year, today.month + 3, 1)
     months = month_starts(start, end)
     result: Dict[str, Any] = {
         "updated_at": dt.datetime.utcnow().replace(microsecond=0).isoformat() + "Z",
         "source": "ChinaMoney/CFETS RMB central parity rate",
-        "rule": "For each currency and report month, use the RMB central parity rate on the first calendar day of the month; if unavailable, use the latest trading day before that date.",
+        "rule": "For each currency and report month, use the RMB central parity rate on the first calendar day of the month; if unavailable, use the latest trading day before that date. Rates are stored as CNY per 1 unit of foreign currency.",
+        "currencies_requested": CURRENCIES,
         "rates": {},
         "errors": {},
     }
@@ -142,6 +167,7 @@ def main() -> int:
                         "rate": float(value),
                         "source_date": source_date.isoformat(),
                         "pair": pair_for(currency),
+                        "quote_unit_adjusted": str(QUOTE_UNITS.get(currency, Decimal("1"))),
                     }
             time.sleep(0.8)
         except Exception as exc:
@@ -149,6 +175,8 @@ def main() -> int:
     OUTPUT.parent.mkdir(parents=True, exist_ok=True)
     OUTPUT.write_text(json.dumps(result, ensure_ascii=False, indent=2, sort_keys=True), encoding="utf-8")
     print(f"Wrote {OUTPUT}")
+    if result["errors"]:
+        print("Currencies with no ChinaMoney data or fetch errors:", ", ".join(sorted(result["errors"])))
     return 0
 
 
