@@ -1,0 +1,4 @@
+store_site,registered_company,display_name,currency,notes
+DE-SHOP,COMPANY_PLACEHOLDER,SHOP_PLACEHOLDER,EUR,example only; replace locally and do not commit real data
+US-SHOP,COMPANY_PLACEHOLDER,SHOP_PLACEHOLDER,USD,example only; replace locally and do not commit real data
+MX-SHOP,COMPANY_PLACEHOLDER,SHOP_PLACEHOLDER,MXN,example only; replace locally and do not commit real data
