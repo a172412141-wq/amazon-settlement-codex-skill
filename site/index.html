@@ -5,10 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Amazon Settlement PDF 数据表工具</title>
   <style>
-    :root { --bg:#f6f7fb; --card:#fff; --text:#111827; --muted:#6b7280; --line:#d1d5db; --blue:#2563eb; --red:#991b1b; --redbg:#fee2e2; --green:#166534; --greenbg:#dcfce7; }
+    :root { --bg:#f6f7fb; --card:#fff; --text:#111827; --muted:#6b7280; --line:#d1d5db; --blue:#2563eb; --red:#991b1b; --redbg:#fee2e2; --green:#166534; --greenbg:#dcfce7; --amber:#92400e; --amberbg:#fffbeb; }
     * { box-sizing:border-box; }
     body { margin:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,"PingFang SC","Microsoft YaHei",sans-serif; background:var(--bg); color:var(--text); }
-    .wrap { max-width:980px; margin:42px auto; padding:0 18px; }
+    .wrap { max-width:1180px; margin:42px auto; padding:0 18px; }
     .card { background:var(--card); border-radius:18px; box-shadow:0 12px 40px rgba(15,23,42,.08); padding:28px; }
     h1 { margin:0 0 8px; font-size:28px; }
     h2 { margin-top:28px; font-size:18px; }
@@ -16,28 +16,34 @@
     .login { max-width:430px; margin:12vh auto; }
     label { display:block; margin-top:18px; font-weight:650; }
     input, textarea { width:100%; margin-top:8px; padding:12px 14px; border:1px solid var(--line); border-radius:10px; background:#fff; font-size:15px; }
-    textarea { min-height:74px; resize:vertical; }
+    textarea { min-height:76px; resize:vertical; }
     button { border:0; border-radius:10px; padding:12px 18px; background:var(--blue); color:#fff; cursor:pointer; font-size:15px; }
     button:disabled { opacity:.55; cursor:not-allowed; }
     .row { display:flex; gap:12px; flex-wrap:wrap; align-items:center; margin-top:18px; }
     .small { font-size:13px; color:var(--muted); }
     .notice { background:#eff6ff; border:1px solid #bfdbfe; color:#1e3a8a; padding:12px 14px; border-radius:12px; margin:18px 0; }
-    .warn { background:#fff7ed; border:1px solid #fed7aa; color:#9a3412; padding:12px 14px; border-radius:12px; margin:18px 0; }
+    .warn { background:var(--amberbg); border:1px solid #fed7aa; color:var(--amber); padding:12px 14px; border-radius:12px; margin:18px 0; }
     .err { background:var(--redbg); border:1px solid #fecaca; color:var(--red); padding:12px 14px; border-radius:12px; margin:18px 0; white-space:pre-wrap; }
     .ok { background:var(--greenbg); border:1px solid #bbf7d0; color:var(--green); padding:12px 14px; border-radius:12px; margin:18px 0; }
-    table { border-collapse:collapse; width:100%; margin-top:18px; font-size:13px; }
-    th, td { border:1px solid #e5e7eb; padding:8px; text-align:left; vertical-align:top; }
-    th { background:#f3f4f6; position:sticky; top:0; }
-    .tablebox { overflow:auto; max-height:440px; border-radius:10px; }
     .hidden { display:none; }
+    .tablebox { overflow:auto; max-height:520px; border-radius:10px; border:1px solid #e5e7eb; }
+    table { border-collapse:collapse; width:100%; font-size:13px; background:white; }
+    th, td { border:1px solid #e5e7eb; padding:8px; text-align:left; vertical-align:top; }
+    th { background:#f3f4f6; position:sticky; top:0; z-index:1; }
+    .badge { display:inline-block; padding:2px 7px; border-radius:999px; font-size:12px; font-weight:650; }
+    .badge-ok { background:var(--greenbg); color:var(--green); }
+    .badge-warn { background:var(--amberbg); color:var(--amber); }
+    .badge-bad { background:var(--redbg); color:var(--red); }
     code { background:#f3f4f6; padding:2px 5px; border-radius:5px; }
+    .confirm { display:flex; align-items:flex-start; gap:10px; padding:12px 14px; border:1px solid #d1d5db; border-radius:12px; margin-top:18px; }
+    .confirm input { width:auto; margin:3px 0 0; }
   </style>
 </head>
 <body>
   <div id="login" class="wrap login">
     <div class="card">
       <h1>Amazon Settlement 数据表工具</h1>
-      <p>输入密码后使用。处理过程在浏览器本地完成，不上传 PDF 到服务器。</p>
+      <p>输入密码后使用。PDF 在浏览器本地解析，不上传到服务器。</p>
       <label>密码</label>
       <input id="password" type="password" autocomplete="current-password" placeholder="请输入密码">
       <div class="row"><button id="loginBtn">进入工具</button></div>
@@ -48,50 +54,90 @@
   <div id="app" class="wrap hidden">
     <div class="card">
       <h1>Amazon Settlement PDF → Excel 数据表</h1>
-      <p>上传一个或多个 Amazon Settlement PDF，自动提取 income、expenses、transfer、tax，并生成 Excel 数据表。</p>
-      <div class="notice">GitHub Pages 静态版：PDF 在浏览器内解析，Excel 在浏览器内生成。仓库和 GitHub 不保存上传文件。</div>
-      <div class="warn">前端密码只适合内部轻量使用，不等同于服务器级鉴权。页面链接不要公开传播。</div>
+      <p>先识别不同语言的字段标签，显示“原文标签 → 中文字段”的确认表。确认无误后，才允许下载 Excel。</p>
+      <div class="notice">处理流程：上传 PDF → 翻译/字段映射确认 → 预览取数结果 → 下载 Excel。</div>
+      <div class="warn">GitHub Pages 静态版没有服务器级权限控制；密码只做页面入口限制。PDF 不上传服务器，但页面代码是公开可见的。</div>
 
       <label>PDF 文件</label>
       <input id="pdfInput" type="file" accept="application/pdf,.pdf" multiple>
-      <p class="small">建议文件名包含站点和月份，例如 <code>CRZX-DE_Standard-2026-04.pdf</code>。</p>
+      <p class="small">支持多语言 Amazon 结算 PDF。位置有偏差时，系统优先按字段标签和行内容识别，不只靠固定坐标。</p>
 
       <label>手动汇率，可选</label>
       <textarea id="manualRates" placeholder="例如：EUR=7.916\nUSD=7.105\nEUR:2026-04-01=7.916"></textarea>
-      <p class="small">纯 GitHub Pages 没有后端代理，自动读取 ChinaMoney 可能被浏览器 CORS 拦截。取不到汇率时，原币数据仍会生成；人民币列留空。需要稳定人民币计算时，在这里填写汇率。</p>
+      <p class="small">GitHub-only 版本不能稳定跨域抓 ChinaMoney。若需要人民币列，请填写对应币种汇率；不填则原币数据照常生成。</p>
 
       <div class="row">
-        <button id="processBtn">生成 Excel 数据表</button>
+        <button id="analyzeBtn">1. 识别并生成翻译确认表</button>
+        <button id="xlsxBtn" disabled>2. 确认后下载 Excel</button>
         <button id="csvBtn" disabled>下载 CSV</button>
-        <button id="xlsxBtn" disabled>下载 Excel</button>
         <button id="logoutBtn" style="background:#6b7280">退出</button>
       </div>
 
       <div id="status" class="notice hidden"></div>
       <div id="error" class="err hidden"></div>
-      <div id="preview" class="tablebox hidden"></div>
+
+      <div id="confirmPanel" class="hidden">
+        <h2>翻译 / 字段映射确认</h2>
+        <p class="small">请核对每一行的“PDF 原文标签”和“翻译为中文字段”。如果有字段识别错，不要下载 Excel，需要调整规则。</p>
+        <div id="translationPreview" class="tablebox"></div>
+        <label class="confirm"><input id="confirmCheck" type="checkbox"><span>我已确认上方翻译映射和金额来源行正确，允许生成数据表。</span></label>
+      </div>
+
+      <div id="dataPanel" class="hidden">
+        <h2>数据表预览</h2>
+        <div id="dataPreview" class="tablebox"></div>
+      </div>
     </div>
   </div>
 
-  <script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@4.10.38/build/pdf.min.mjs" type="module"></script>
   <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
   <script type="module">
     import * as pdfjsLib from 'https://cdn.jsdelivr.net/npm/pdfjs-dist@4.10.38/build/pdf.min.mjs';
     pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdn.jsdelivr.net/npm/pdfjs-dist@4.10.38/build/pdf.worker.min.mjs';
 
     const PASSWORD_HASH = 'f6c0ae9dd8375b102e36de598f16c84d1de8b812fef958f0aaa3de7a0900df6c';
-    const HEADERS = [
+
+    const DATA_HEADERS = [
       '月份','平台','店铺(按站点)','注册主体(公司名字)','亚马逊结算报告','币种','汇率日期','汇率',
       '店铺销售额（原币）','销售税Tax（原币）','店铺销售额（原币 包含TAX）','销售费用（原币）','账单回款额（原币）',
       '店铺销售额（人民币）','销售税Tax（人民币）','店铺销售额（人民币 包含TAX）','销售费用（人民币）','账单回款额（人民币）',
       'PDF原始expenses','PDF原始transfer','状态','备注'
     ];
-    const LABELS = {
-      income: ['income','einnahmen','ingresos','entrate','revenus','recettes','inkomsten','przychody','receitas','收入','売上','収入'],
-      expenses: ['expenses','ausgaben','gastos','spese','dépenses','depenses','kosten','uitgaven','wydatki','despesas','支出','費用'],
-      tax: ['tax','steuer','impuesto','imposte','taxes','belasting','podatek','imposto','税'],
-      transfer: ['transfers','transfer to bank account','übertragungen','uebertragungen','überweisungen auf bankkonto','ueberweisungen auf bankkonto','transferencias','trasferimenti','virements','transferts','overboekingen','przelewy','bank account','bankkonto','回款','振込','銀行','转账','轉賬']
+
+    const CONFIRM_HEADERS = ['PDF','中文字段','识别语言','PDF原文标签','中文含义','PDF原始行','PDF原始金额','写入口径金额','置信度','状态'];
+
+    const FIELD_RULES = {
+      income: {
+        zh: '店铺销售额（原币）', meaning: '收入 / 销售额', sign: 'as_is', required: true,
+        labels: [
+          ['Income','English'], ['Einnahmen','German'], ['Ingresos','Spanish'], ['Entrate','Italian'], ['Revenus','French'], ['Recettes','French'],
+          ['Inkomsten','Dutch'], ['Przychody','Polish'], ['Receitas','Portuguese'], ['Gelir','Turkish'], ['收入','Chinese'], ['売上','Japanese'], ['収入','Japanese']
+        ]
+      },
+      expenses: {
+        zh: '销售费用（原币）', meaning: '支出 / 费用', sign: 'abs', required: true,
+        labels: [
+          ['Expenses','English'], ['Ausgaben','German'], ['Gastos','Spanish'], ['Spese','Italian'], ['Dépenses','French'], ['Depenses','French'],
+          ['Kosten','Dutch/German'], ['Uitgaven','Dutch'], ['Wydatki','Polish'], ['Despesas','Portuguese'], ['Gider','Turkish'], ['支出','Chinese'], ['費用','Japanese']
+        ]
+      },
+      tax: {
+        zh: '销售税Tax（原币）', meaning: '税 / Tax', sign: 'as_is', required: false,
+        labels: [
+          ['Tax','English'], ['Steuer','German'], ['Impuesto','Spanish'], ['Impuestos','Spanish'], ['Imposte','Italian'], ['Taxes','French/English'],
+          ['Belasting','Dutch'], ['Podatek','Polish'], ['Imposto','Portuguese'], ['Vergi','Turkish'], ['税','Chinese/Japanese']
+        ]
+      },
+      transfer: {
+        zh: '账单回款额（原币）', meaning: '银行回款 / 转账', sign: 'abs', required: true,
+        labels: [
+          ['Transfers','English'], ['Transfer to bank account','English'], ['Übertragungen','German'], ['Uebertragungen','German'], ['Überweisungen auf Bankkonto','German'], ['Ueberweisungen auf Bankkonto','German'],
+          ['Transferencias','Spanish'], ['Transferencias a cuenta bancaria','Spanish'], ['Trasferimenti','Italian'], ['Virements','French'], ['Transferts','French'],
+          ['Overboekingen','Dutch'], ['Przelewy','Polish'], ['Bank account','English'], ['Bankkonto','German'], ['回款','Chinese'], ['转账','Chinese'], ['轉賬','Chinese'], ['振込','Japanese'], ['銀行','Japanese/Chinese']
+        ]
+      }
     };
+
     const CURRENCY_TEXT = [
       [/\bEuro\b|\bEUR\b|euros/i, 'EUR'], [/USD|US Dollars?|U\.S\. Dollars?/i, 'USD'], [/GBP|British Pounds?|Pound Sterling/i, 'GBP'],
       [/MXN|Mexican Pesos?/i, 'MXN'], [/CAD|Canadian Dollars?/i, 'CAD'], [/AUD|Australian Dollars?/i, 'AUD'], [/JPY|Japanese Yen|Yen/i, 'JPY'],
@@ -101,12 +147,15 @@
     const MONTHS = {jan:1,january:1,januar:1,janvier:1,enero:1,gennaio:1,feb:2,february:2,februar:2,fevrier:2,février:2,febrero:2,febbraio:2,mar:3,march:3,marz:3,märz:3,maerz:3,mars:3,marzo:3,apr:4,april:4,avril:4,abril:4,aprile:4,may:5,mai:5,mayo:5,maggio:5,jun:6,june:6,juni:6,juin:6,junio:6,giugno:6,jul:7,july:7,juli:7,juillet:7,julio:7,luglio:7,aug:8,august:8,aout:8,août:8,agosto:8,sep:9,sept:9,september:9,septembre:9,septiembre:9,settembre:9,oct:10,october:10,okt:10,oktober:10,octobre:10,octubre:10,ottobre:10,nov:11,november:11,novembre:11,noviembre:11,dec:12,december:12,dez:12,dezember:12,decembre:12,décembre:12,diciembre:12,dicembre:12};
 
     let lastRows = [];
+    let lastConfirmRows = [];
 
     function $(id){ return document.getElementById(id); }
     function show(id, text='') { const el=$(id); if(text) el.textContent=text; el.classList.remove('hidden'); }
     function hide(id) { $(id).classList.add('hidden'); }
     function norm(s){ return String(s||'').toLowerCase().replace(/\s+/g,' ').replace(/ü/g,'u').replace(/ä/g,'a').replace(/ö/g,'o').replace(/ß/g,'ss').trim(); }
+    function esc(s){ return String(s ?? '').replace(/[&<>"']/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch])); }
     async function sha256(text){ const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(text)); return Array.from(new Uint8Array(buf)).map(b=>b.toString(16).padStart(2,'0')).join(''); }
+
     function parseAmount(raw){
       let s = String(raw||'').replace(/\u00a0/g,' ').replace(/\s/g,'').trim();
       let neg = false;
@@ -121,10 +170,40 @@
     }
     function amountTokens(text){ return String(text).match(/[-−(]?\d{1,3}(?:[.,]\d{3})*(?:[.,]\d{2,4})\)?|[-−(]?\d+(?:[.,]\d{2,4})\)?/g) || []; }
     function rightmostAmount(rowText){ const tokens = amountTokens(rowText); if(!tokens.length) return null; return parseAmount(tokens[tokens.length-1]); }
-    function containsLabel(rowText, key){ const n = norm(rowText); return LABELS[key].some(l => n.includes(norm(l))); }
-    function extractAmount(rows, key){
-      for(const row of rows){ if(containsLabel(row.text, key)){ const v = rightmostAmount(row.text); if(v !== null) return {value:v, source:row.text}; } }
-      throw new Error('找不到字段：' + key);
+    function findMatchedLabel(rowText, key){
+      const n = norm(rowText);
+      for(const [label, lang] of FIELD_RULES[key].labels){
+        if(n.includes(norm(label))) return {label, lang};
+      }
+      return null;
+    }
+    function summaryRows(allRows){
+      const idx = allRows.findIndex(r => /summaries|zusammenfassungen|resumen|resúmenes|riepilog|synth|samenvatting|podsumowanie|概要|サマリー/i.test(r.text));
+      return idx >= 0 ? allRows.slice(idx, Math.min(idx + 22, allRows.length)) : allRows.slice(0, Math.min(45, allRows.length));
+    }
+    function extractField(allRows, key){
+      const rule = FIELD_RULES[key];
+      const preferred = summaryRows(allRows);
+      const candidates = [];
+      for(const [scopeName, rows] of [['summary', preferred], ['full_pdf', allRows]]){
+        for(let i=0; i<rows.length; i++){
+          const row = rows[i];
+          const matched = findMatchedLabel(row.text, key);
+          if(!matched) continue;
+          const rawAmount = rightmostAmount(row.text);
+          if(rawAmount === null) continue;
+          let confidence = scopeName === 'summary' ? 95 : 78;
+          if(/subtotal|zwischensummen|total|gesamt|summary/i.test(row.text)) confidence += 2;
+          candidates.push({key, rowText:row.text, rawAmount, matched, confidence: Math.min(confidence, 99), scopeName});
+          if(scopeName === 'summary') break;
+        }
+        if(candidates.length && scopeName === 'summary') break;
+      }
+      if(!candidates.length){
+        if(rule.required) throw new Error(`找不到 ${rule.zh} 的多语言标签或金额`);
+        return {key, rowText:'', rawAmount:0, matched:{label:'未找到', lang:'N/A'}, confidence:0, missing:true};
+      }
+      return candidates[0];
     }
     function parseMonth(filename, text){
       let m = filename.match(/(20\d{2})[-_\.](0[1-9]|1[0-2])/);
@@ -144,8 +223,7 @@
     }
     function valueAfterLabel(rows, labels){
       for(const row of rows){
-        const rt = row.text;
-        const n = norm(rt);
+        const rt = row.text, n = norm(rt);
         if(labels.some(l => n.includes(norm(l)))){
           const idx = rt.indexOf(':');
           if(idx >= 0 && rt.slice(idx+1).trim()) return rt.slice(idx+1).trim();
@@ -158,7 +236,8 @@
       String(text||'').split(/[\n,，;；]+/).map(x=>x.trim()).filter(Boolean).forEach(item => {
         const [left, right] = item.split('=').map(x=>x.trim());
         if(!left || !right) return;
-        rates[left.toUpperCase()] = Number(right);
+        const val = Number(right);
+        if(Number.isFinite(val)) rates[left.toUpperCase()] = val;
       });
       return rates;
     }
@@ -168,7 +247,10 @@
       if(Number.isFinite(rates[currency])) return {rate: rates[currency], date: monthStart, source:'manual'};
       return {rate: null, date: '', source:'missing'};
     }
-    async function extractPdf(file){
+    function cny(v, rate){ return Number.isFinite(rate) ? Math.round(v * rate * 100) / 100 : ''; }
+    function writeAmount(field){ return FIELD_RULES[field.key].sign === 'abs' ? Math.abs(field.rawAmount) : field.rawAmount; }
+
+    async function readPdfRows(file){
       const data = await file.arrayBuffer();
       const pdf = await pdfjsLib.getDocument({data}).promise;
       let allText = '';
@@ -181,7 +263,7 @@
         const buckets = [];
         for(const it of items){
           let bucket = buckets.find(b => Math.abs(b.y - it.y) <= 3);
-          if(!bucket){ bucket = {y:it.y, items:[]}; buckets.push(bucket); }
+          if(!bucket){ bucket = {page:p, y:it.y, items:[]}; buckets.push(bucket); }
           bucket.items.push(it);
         }
         for(const b of buckets){
@@ -190,63 +272,95 @@
           if(line){ rows.push({page:p, y:b.y, text:line}); allText += line + '\n'; }
         }
       }
-      const summaryIndex = rows.findIndex(r => /summaries|zusammenfassungen|resumen|riepilog|synth|samenvatting|podsumowanie|概要|サマリー/i.test(r.text));
-      const summaryRows = summaryIndex >= 0 ? rows.slice(summaryIndex, Math.min(summaryIndex + 16, rows.length)) : rows.slice(0, 30);
-      const month = parseMonth(file.name, allText);
-      const store = storeFromFilename(file.name);
-      const currency = currencyFrom(allText, store);
-      const income = extractAmount(summaryRows, 'income').value;
-      const expensesRaw = extractAmount(summaryRows, 'expenses').value;
-      let tax = 0, taxNote = '';
-      try { tax = extractAmount(summaryRows, 'tax').value; } catch(e) { taxNote = 'tax not found; use 0'; }
-      const transferRaw = extractAmount(summaryRows, 'transfer').value;
-      const registeredCompany = valueAfterLabel(rows, ['Registered business name','Legal entity name','Eingetragener Firmenname','Ragione sociale','Razón social','Nom légal']);
-      return {fileName:file.name, month, store, registeredCompany, currency, income, tax, incomeWithTax:income + tax, expenses:Math.abs(expensesRaw), transfer:Math.abs(transferRaw), expensesRaw, transferRaw, note:taxNote};
+      return {rows, allText};
     }
-    function cny(v, rate){ return Number.isFinite(rate) ? Math.round(v * rate * 100) / 100 : ''; }
-    async function processFiles(){
-      hide('error'); hide('status'); hide('preview');
+
+    async function analyzeFiles(){
+      hide('error'); hide('status'); hide('confirmPanel'); hide('dataPanel');
+      $('confirmCheck').checked = false; $('xlsxBtn').disabled = true; $('csvBtn').disabled = true;
       const files = Array.from($('pdfInput').files || []);
       if(!files.length){ show('error','请先选择 PDF 文件。'); return; }
-      $('processBtn').disabled = true; $('csvBtn').disabled = true; $('xlsxBtn').disabled = true;
-      show('status', `正在处理 ${files.length} 个 PDF...`);
+      $('analyzeBtn').disabled = true;
+      show('status', `正在识别 ${files.length} 个 PDF 的多语言字段标签...`);
       const manualRates = parseManualRates($('manualRates').value);
-      const rows = [];
+      const dataRows = [];
+      const confirmRows = [];
+
       for(const file of files){
         try{
-          const e = await extractPdf(file);
-          const r = rateFor(e.currency, e.month, manualRates);
+          const {rows, allText} = await readPdfRows(file);
+          const month = parseMonth(file.name, allText);
+          const store = storeFromFilename(file.name);
+          const currency = currencyFrom(allText, store);
+          const registeredCompany = valueAfterLabel(rows, ['Registered business name','Legal entity name','Eingetragener Firmenname','Ragione sociale','Razón social','Nom légal']);
+          const fields = {};
+          for(const key of ['income','expenses','tax','transfer']){
+            fields[key] = extractField(rows, key);
+            const rule = FIELD_RULES[key];
+            confirmRows.push({
+              'PDF': file.name,
+              '中文字段': rule.zh,
+              '识别语言': fields[key].matched.lang,
+              'PDF原文标签': fields[key].matched.label,
+              '中文含义': rule.meaning,
+              'PDF原始行': fields[key].rowText || '未找到，按 0 处理',
+              'PDF原始金额': fields[key].missing ? '' : fields[key].rawAmount,
+              '写入口径金额': fields[key].missing ? 0 : writeAmount(fields[key]),
+              '置信度': fields[key].confidence ? `${fields[key].confidence}%` : '0%',
+              '状态': fields[key].missing ? 'OPTIONAL_MISSING' : 'OK'
+            });
+          }
+          const income = writeAmount(fields.income);
+          const tax = fields.tax.missing ? 0 : writeAmount(fields.tax);
+          const expenses = writeAmount(fields.expenses);
+          const transfer = writeAmount(fields.transfer);
+          const r = rateFor(currency, month, manualRates);
           const status = r.rate ? 'OK' : 'RATE_MISSING';
-          const notes = [e.note, r.rate ? '' : '未填写/未取得汇率，人民币列留空'].filter(Boolean).join('; ');
-          rows.push({
-            '月份': e.month, '平台':'亚马逊', '店铺(按站点)': e.store, '注册主体(公司名字)': e.registeredCompany, '亚马逊结算报告': e.fileName,
-            '币种': e.currency, '汇率日期': r.date, '汇率': r.rate || '',
-            '店铺销售额（原币）': e.income, '销售税Tax（原币）': e.tax, '店铺销售额（原币 包含TAX）': e.incomeWithTax,
-            '销售费用（原币）': e.expenses, '账单回款额（原币）': e.transfer,
-            '店铺销售额（人民币）': cny(e.income, r.rate), '销售税Tax（人民币）': cny(e.tax, r.rate), '店铺销售额（人民币 包含TAX）': cny(e.incomeWithTax, r.rate),
-            '销售费用（人民币）': cny(e.expenses, r.rate), '账单回款额（人民币）': cny(e.transfer, r.rate),
-            'PDF原始expenses': e.expensesRaw, 'PDF原始transfer': e.transferRaw, '状态': status, '备注': notes
+          const notes = r.rate ? '' : '未填写/未取得汇率，人民币列留空';
+          dataRows.push({
+            '月份': month, '平台':'亚马逊', '店铺(按站点)': store, '注册主体(公司名字)': registeredCompany, '亚马逊结算报告': file.name,
+            '币种': currency, '汇率日期': r.date, '汇率': r.rate || '',
+            '店铺销售额（原币）': income, '销售税Tax（原币）': tax, '店铺销售额（原币 包含TAX）': income + tax,
+            '销售费用（原币）': expenses, '账单回款额（原币）': transfer,
+            '店铺销售额（人民币）': cny(income, r.rate), '销售税Tax（人民币）': cny(tax, r.rate), '店铺销售额（人民币 包含TAX）': cny(income + tax, r.rate),
+            '销售费用（人民币）': cny(expenses, r.rate), '账单回款额（人民币）': cny(transfer, r.rate),
+            'PDF原始expenses': fields.expenses.rawAmount, 'PDF原始transfer': fields.transfer.rawAmount, '状态': status, '备注': notes
           });
         } catch(err){
-          rows.push({'月份':'','平台':'亚马逊','店铺(按站点)':'','注册主体(公司名字)':'','亚马逊结算报告':file.name,'币种':'','汇率日期':'','汇率':'','店铺销售额（原币）':'','销售税Tax（原币）':'','店铺销售额（原币 包含TAX）':'','销售费用（原币）':'','账单回款额（原币）':'','店铺销售额（人民币）':'','销售税Tax（人民币）':'','店铺销售额（人民币 包含TAX）':'','销售费用（人民币）':'','账单回款额（人民币）':'','PDF原始expenses':'','PDF原始transfer':'','状态':'EXTRACT_FAILED','备注':String(err.message || err)});
+          confirmRows.push({'PDF':file.name,'中文字段':'全部字段','识别语言':'N/A','PDF原文标签':'N/A','中文含义':'N/A','PDF原始行':'解析失败','PDF原始金额':'','写入口径金额':'','置信度':'0%','状态':'EXTRACT_FAILED'});
+          dataRows.push({'月份':'','平台':'亚马逊','店铺(按站点)':'','注册主体(公司名字)':'','亚马逊结算报告':file.name,'币种':'','汇率日期':'','汇率':'','店铺销售额（原币）':'','销售税Tax（原币）':'','店铺销售额（原币 包含TAX）':'','销售费用（原币）':'','账单回款额（原币）':'','店铺销售额（人民币）':'','销售税Tax（人民币）':'','店铺销售额（人民币 包含TAX）':'','销售费用（人民币）':'','账单回款额（人民币）':'','PDF原始expenses':'','PDF原始transfer':'','状态':'EXTRACT_FAILED','备注':String(err.message || err)});
         }
       }
-      lastRows = rows;
-      renderPreview(rows);
-      $('csvBtn').disabled = false; $('xlsxBtn').disabled = false; $('processBtn').disabled = false;
-      show('status', `处理完成：${rows.length} 行。请先预览，再下载 Excel。`);
+      lastRows = dataRows;
+      lastConfirmRows = confirmRows;
+      renderTable('translationPreview', CONFIRM_HEADERS, confirmRows, true);
+      renderTable('dataPreview', DATA_HEADERS, dataRows, true);
+      show('confirmPanel'); show('dataPanel');
+      $('csvBtn').disabled = false;
+      $('analyzeBtn').disabled = false;
+      show('status', `识别完成：${dataRows.length} 个 PDF。请先核对翻译确认表，再勾选确认下载 Excel。`);
     }
-    function renderPreview(rows){
-      const html = `<table><thead><tr>${HEADERS.map(h=>`<th>${h}</th>`).join('')}</tr></thead><tbody>${rows.map(r=>`<tr>${HEADERS.map(h=>`<td>${r[h] ?? ''}</td>`).join('')}</tr>`).join('')}</tbody></table>`;
-      $('preview').innerHTML = html; show('preview');
+
+    function renderTable(targetId, headers, rows, badgeStatus=false){
+      const html = `<table><thead><tr>${headers.map(h=>`<th>${esc(h)}</th>`).join('')}</tr></thead><tbody>${rows.map(r=>`<tr>${headers.map(h=>`<td>${formatCell(h, r[h], badgeStatus)}</td>`).join('')}</tr>`).join('')}</tbody></table>`;
+      $(targetId).innerHTML = html;
+    }
+    function formatCell(header, value, badgeStatus){
+      if(header === '状态' && badgeStatus){
+        const v = String(value || '');
+        const cls = v === 'OK' ? 'badge-ok' : (v.includes('MISSING') ? 'badge-warn' : 'badge-bad');
+        return `<span class="badge ${cls}">${esc(v)}</span>`;
+      }
+      return esc(value ?? '');
     }
     function downloadCsv(){
-      const csv = [HEADERS.join(',')].concat(lastRows.map(r => HEADERS.map(h => `"${String(r[h] ?? '').replace(/"/g,'""')}"`).join(','))).join('\n');
+      const csv = [DATA_HEADERS.join(',')].concat(lastRows.map(r => DATA_HEADERS.map(h => `"${String(r[h] ?? '').replace(/"/g,'""')}"`).join(','))).join('\n');
       const blob = new Blob(['\ufeff' + csv], {type:'text/csv;charset=utf-8'});
       downloadBlob(blob, 'amazon_settlement_table.csv');
     }
     function downloadXlsx(){
-      const ws = XLSX.utils.json_to_sheet(lastRows, {header: HEADERS});
+      if(!$('confirmCheck').checked){ show('error','请先确认翻译映射和金额来源行，再下载 Excel。'); return; }
+      const ws = XLSX.utils.json_to_sheet(lastRows, {header: DATA_HEADERS});
       const wb = XLSX.utils.book_new();
       XLSX.utils.book_append_sheet(wb, ws, 'Amazon Settlement');
       XLSX.writeFile(wb, 'amazon_settlement_table.xlsx');
@@ -254,6 +368,7 @@
     function downloadBlob(blob, name){
       const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = name; a.click(); setTimeout(()=>URL.revokeObjectURL(a.href), 1000);
     }
+
     $('loginBtn').addEventListener('click', async () => {
       const ok = await sha256($('password').value || '') === PASSWORD_HASH;
       if(ok){ sessionStorage.setItem('ok','1'); $('login').classList.add('hidden'); $('app').classList.remove('hidden'); }
@@ -261,9 +376,10 @@
     });
     $('password').addEventListener('keydown', e => { if(e.key === 'Enter') $('loginBtn').click(); });
     $('logoutBtn').addEventListener('click', () => { sessionStorage.removeItem('ok'); location.reload(); });
-    $('processBtn').addEventListener('click', processFiles);
+    $('analyzeBtn').addEventListener('click', analyzeFiles);
     $('csvBtn').addEventListener('click', downloadCsv);
     $('xlsxBtn').addEventListener('click', downloadXlsx);
+    $('confirmCheck').addEventListener('change', e => { $('xlsxBtn').disabled = !e.target.checked || !lastRows.length; hide('error'); });
     if(sessionStorage.getItem('ok') === '1'){ $('login').classList.add('hidden'); $('app').classList.remove('hidden'); }
   </script>
 </body>
