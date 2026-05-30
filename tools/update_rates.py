@@ -19,21 +19,12 @@ import requests
 URL = "https://www.chinamoney.com.cn/ags/ms/cm-u-bk-ccpr/CcprHisNew"
 REFERER = "https://www.chinamoney.com.cn/chinese/bkccpr/"
 
-# ChinaMoney / CFETS RMB central parity commonly supports the following currencies.
-# This list intentionally covers all common Amazon settlement currencies that have
-# a ChinaMoney central parity record. Unsupported currencies will be recorded in
-# the errors section instead of stopping the workflow.
 CURRENCIES = [
     "USD", "EUR", "JPY", "HKD", "GBP", "AUD", "NZD", "SGD", "CHF", "CAD",
     "MOP", "MYR", "RUB", "ZAR", "KRW", "AED", "SAR", "HUF", "PLN", "DKK",
-    "SEK", "NOK", "TRY", "MXN", "THB",
-    # Extra Amazon / marketplace currencies. ChinaMoney may not publish central
-    # parity for all of these; keep them so missing coverage is explicit.
-    "BRL", "INR", "EGP", "CNY",
+    "SEK", "NOK", "TRY", "MXN", "THB", "CNY",
 ]
 
-# ChinaMoney displays some currencies per 100 units. Store rates as CNY per 1 unit
-# so RMB amount = original currency amount * stored rate.
 QUOTE_UNITS = {
     "JPY": Decimal("100"),
     "KRW": Decimal("100"),
@@ -41,6 +32,7 @@ QUOTE_UNITS = {
 }
 
 OUTPUT = Path("site/rates.json")
+SESSION = requests.Session()
 
 
 def month_starts(start: dt.date, end: dt.date) -> List[dt.date]:
@@ -87,7 +79,7 @@ def pair_for(currency: str) -> str:
     return "CNY/CNY" if currency == "CNY" else f"{currency}/CNY"
 
 
-def fetch_records(currency: str, start: dt.date, end: dt.date) -> List[Tuple[dt.date, Decimal]]:
+def request_window(currency: str, start: dt.date, end: dt.date) -> List[Tuple[dt.date, Decimal]]:
     if currency == "CNY":
         return [(start, Decimal("1")), (end, Decimal("1"))]
 
@@ -96,56 +88,56 @@ def fetch_records(currency: str, start: dt.date, end: dt.date) -> List[Tuple[dt.
         "endDate": end.strftime("%Y-%m-%d"),
         "currency": pair_for(currency),
         "pageNum": "1",
-        "pageSize": "5000",
+        "pageSize": "30",
     }
     headers = {
+        "Accept": "application/json, text/plain, */*",
+        "Accept-Language": "zh-CN,zh;q=0.9,en;q=0.8",
         "Referer": REFERER,
         "Origin": "https://www.chinamoney.com.cn",
         "X-Requested-With": "XMLHttpRequest",
-        "User-Agent": "Mozilla/5.0",
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36",
     }
+    quote_unit = QUOTE_UNITS.get(currency, Decimal("1"))
     last_error = None
     for attempt in range(3):
         try:
-            resp = requests.post(URL, params=params, headers=headers, timeout=30)
+            # Warm up cookies; ChinaMoney often rejects direct API hits.
+            if attempt == 0:
+                try:
+                    SESSION.get(REFERER, headers=headers, timeout=20)
+                except Exception:
+                    pass
+            resp = SESSION.get(URL, params=params, headers=headers, timeout=30)
             if resp.status_code >= 400:
-                resp = requests.get(URL, params=params, headers=headers, timeout=30)
+                resp = SESSION.post(URL, params=params, headers=headers, timeout=30)
             resp.raise_for_status()
             data = resp.json()
             records = data.get("records") or data.get("data") or []
             if isinstance(records, dict):
                 records = records.get("records", [])
             out = []
-            quote_unit = QUOTE_UNITS.get(currency, Decimal("1"))
             for record in records:
                 d = record_date(record)
                 v = record_value(record)
                 if d and v is not None:
                     out.append((d, v / quote_unit))
-            if not out:
-                raise RuntimeError("no records returned")
             return sorted(out, key=lambda x: x[0])
         except Exception as exc:
             last_error = exc
-            time.sleep(2 + attempt)
-    raise RuntimeError(f"Failed to fetch {currency}: {last_error}")
+            time.sleep(1.5 + attempt)
+    raise RuntimeError(str(last_error))
 
 
 def latest_on_or_before(records: List[Tuple[dt.date, Decimal]], target: dt.date) -> Optional[Tuple[dt.date, Decimal]]:
     candidates = [item for item in records if item[0] <= target]
-    if not candidates:
-        return None
-    return candidates[-1]
+    return candidates[-1] if candidates else None
 
 
 def main() -> int:
     today = dt.date.today()
     start = dt.date(today.year - 3, 1, 1)
-    if today.month >= 10:
-        end = dt.date(today.year + 1, 3, 1)
-    else:
-        # Avoid invalid month values when today.month is 10 or later; handled above.
-        end = dt.date(today.year, today.month + 3, 1)
+    end = dt.date(today.year + 1, 3, 1) if today.month >= 10 else dt.date(today.year, today.month + 3, 1)
     months = month_starts(start, end)
     result: Dict[str, Any] = {
         "updated_at": dt.datetime.utcnow().replace(microsecond=0).isoformat() + "Z",
@@ -156,10 +148,12 @@ def main() -> int:
         "errors": {},
     }
     for currency in CURRENCIES:
-        try:
-            records = fetch_records(currency, start - dt.timedelta(days=14), end)
-            result["rates"][currency] = {}
-            for month in months:
+        result["rates"][currency] = {}
+        errors = []
+        for month in months:
+            window_start = month - dt.timedelta(days=14)
+            try:
+                records = request_window(currency, window_start, month)
                 found = latest_on_or_before(records, month)
                 if found:
                     source_date, value = found
@@ -169,14 +163,16 @@ def main() -> int:
                         "pair": pair_for(currency),
                         "quote_unit_adjusted": str(QUOTE_UNITS.get(currency, Decimal("1"))),
                     }
-            time.sleep(0.8)
-        except Exception as exc:
-            result["errors"][currency] = str(exc)
+                else:
+                    errors.append(f"{month.isoformat()}: no record")
+            except Exception as exc:
+                errors.append(f"{month.isoformat()}: {exc}")
+            time.sleep(0.25)
+        if errors and not result["rates"][currency]:
+            result["errors"][currency] = errors[:8]
     OUTPUT.parent.mkdir(parents=True, exist_ok=True)
     OUTPUT.write_text(json.dumps(result, ensure_ascii=False, indent=2, sort_keys=True), encoding="utf-8")
     print(f"Wrote {OUTPUT}")
-    if result["errors"]:
-        print("Currencies with no ChinaMoney data or fetch errors:", ", ".join(sorted(result["errors"])))
     return 0
 
 
