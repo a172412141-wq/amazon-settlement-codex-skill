@@ -1,0 +1,7 @@
+interface:
+  display_name: "Amazon Settlement XLSX"
+  short_description: "Extract Amazon settlement PDFs and fill accounting XLSX templates without changing formatting."
+  brand_color: "#2563EB"
+  default_prompt: "Use $amazon-settlement-xlsx to extract Amazon settlement PDFs, fill the accounting workbook, fetch ChinaMoney exchange rates, and produce an audit CSV."
+policy:
+  allow_implicit_invocation: true
