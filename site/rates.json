@@ -29,948 +29,261 @@
   ],
   "errors": {
     "AED": [
-      "2023-01-01: no record",
-      "2023-02-01: no record",
-      "2023-03-01: no record",
-      "2023-04-01: no record",
-      "2023-05-01: no record",
-      "2023-06-01: no record",
-      "2023-07-01: no record",
-      "2023-08-01: no record"
+      "2023-01-01: 403 Client Error: Forbidden for url: https://www.chinamoney.com.cn/ags/ms/cm-u-bk-ccpr/CcprHisNew?startDate=2022-12-18&endDate=2023-01-01&currency=AED%2FCNY&pageNum=1&pageSize=30",
+      "2023-02-01: 403 Client Error: Forbidden for url: https://www.chinamoney.com.cn/ags/ms/cm-u-bk-ccpr/CcprHisNew?startDate=2023-01-18&endDate=2023-02-01&currency=AED%2FCNY&pageNum=1&pageSize=30",
+      "2023-03-01: 403 Client Error: Forbidden for url: https://www.chinamoney.com.cn/ags/ms/cm-u-bk-ccpr/CcprHisNew?startDate=2023-02-15&endDate=2023-03-01&currency=AED%2FCNY&pageNum=1&pageSize=30",
+      "2023-04-01: 403 Client Error: Forbidden for url: https://www.chinamoney.com.cn/ags/ms/cm-u-bk-ccpr/CcprHisNew?startDate=2023-03-18&endDate=2023-04-01&currency=AED%2FCNY&pageNum=1&pageSize=30",
+      "2023-05-01: 403 Client Error: Forbidden for url: https://www.chinamoney.com.cn/ags/ms/cm-u-bk-ccpr/CcprHisNew?startDate=2023-04-17&endDate=2023-05-01&currency=AED%2FCNY&pageNum=1&pageSize=30",
+      "2023-06-01: 403 Client Error: Forbidden for url: https://www.chinamoney.com.cn/ags/ms/cm-u-bk-ccpr/CcprHisNew?startDate=2023-05-18&endDate=2023-06-01&currency=AED%2FCNY&pageNum=1&pageSize=30",
+      "2023-07-01: 403 Client Error: Forbidden for url: https://www.chinamoney.com.cn/ags/ms/cm-u-bk-ccpr/CcprHisNew?startDate=2023-06-17&endDate=2023-07-01&currency=AED%2FCNY&pageNum=1&pageSize=30",
+      "2023-08-01: 403 Client Error: Forbidden for url: https://www.chinamoney.com.cn/ags/ms/cm-u-bk-ccpr/CcprHisNew?startDate=2023-07-18&endDate=2023-08-01&currency=AED%2FCNY&pageNum=1&pageSize=30"
+    ],
+    "AUD": [
+      "2023-01-01: 403 Client Error: Forbidden for url: https://www.chinamoney.com.cn/ags/ms/cm-u-bk-ccpr/CcprHisNew?startDate=2022-12-18&endDate=2023-01-01&currency=AUD%2FCNY&pageNum=1&pageSize=30",
+      "2023-02-01: 403 Client Error: Forbidden for url: https://www.chinamoney.com.cn/ags/ms/cm-u-bk-ccpr/CcprHisNew?startDate=2023-01-18&endDate=2023-02-01&currency=AUD%2FCNY&pageNum=1&pageSize=30",
+      "2023-03-01: 403 Client Error: Forbidden for url: https://www.chinamoney.com.cn/ags/ms/cm-u-bk-ccpr/CcprHisNew?startDate=2023-02-15&endDate=2023-03-01&currency=AUD%2FCNY&pageNum=1&pageSize=30",
+      "2023-04-01: 403 Client Error: Forbidden for url: https://www.chinamoney.com.cn/ags/ms/cm-u-bk-ccpr/CcprHisNew?startDate=2023-03-18&endDate=2023-04-01&currency=AUD%2FCNY&pageNum=1&pageSize=30",
+      "2023-05-01: 403 Client Error: Forbidden for url: https://www.chinamoney.com.cn/ags/ms/cm-u-bk-ccpr/CcprHisNew?startDate=2023-04-17&endDate=2023-05-01&currency=AUD%2FCNY&pageNum=1&pageSize=30",
+      "2023-06-01: 403 Client Error: Forbidden for url: https://www.chinamoney.com.cn/ags/ms/cm-u-bk-ccpr/CcprHisNew?startDate=2023-05-18&endDate=2023-06-01&currency=AUD%2FCNY&pageNum=1&pageSize=30",
+      "2023-07-01: 403 Client Error: Forbidden for url: https://www.chinamoney.com.cn/ags/ms/cm-u-bk-ccpr/CcprHisNew?startDate=2023-06-17&endDate=2023-07-01&currency=AUD%2FCNY&pageNum=1&pageSize=30",
+      "2023-08-01: 403 Client Error: Forbidden for url: https://www.chinamoney.com.cn/ags/ms/cm-u-bk-ccpr/CcprHisNew?startDate=2023-07-18&endDate=2023-08-01&currency=AUD%2FCNY&pageNum=1&pageSize=30"
+    ],
+    "CAD": [
+      "2023-01-01: 403 Client Error: Forbidden for url: https://www.chinamoney.com.cn/ags/ms/cm-u-bk-ccpr/CcprHisNew?startDate=2022-12-18&endDate=2023-01-01&currency=CAD%2FCNY&pageNum=1&pageSize=30",
+      "2023-02-01: 403 Client Error: Forbidden for url: https://www.chinamoney.com.cn/ags/ms/cm-u-bk-ccpr/CcprHisNew?startDate=2023-01-18&endDate=2023-02-01&currency=CAD%2FCNY&pageNum=1&pageSize=30",
+      "2023-03-01: 403 Client Error: Forbidden for url: https://www.chinamoney.com.cn/ags/ms/cm-u-bk-ccpr/CcprHisNew?startDate=2023-02-15&endDate=2023-03-01&currency=CAD%2FCNY&pageNum=1&pageSize=30",
+      "2023-04-01: 403 Client Error: Forbidden for url: https://www.chinamoney.com.cn/ags/ms/cm-u-bk-ccpr/CcprHisNew?startDate=2023-03-18&endDate=2023-04-01&currency=CAD%2FCNY&pageNum=1&pageSize=30",
+      "2023-05-01: 403 Client Error: Forbidden for url: https://www.chinamoney.com.cn/ags/ms/cm-u-bk-ccpr/CcprHisNew?startDate=2023-04-17&endDate=2023-05-01&currency=CAD%2FCNY&pageNum=1&pageSize=30",
+      "2023-06-01: 403 Client Error: Forbidden for url: https://www.chinamoney.com.cn/ags/ms/cm-u-bk-ccpr/CcprHisNew?startDate=2023-05-18&endDate=2023-06-01&currency=CAD%2FCNY&pageNum=1&pageSize=30",
+      "2023-07-01: 403 Client Error: Forbidden for url: https://www.chinamoney.com.cn/ags/ms/cm-u-bk-ccpr/CcprHisNew?startDate=2023-06-17&endDate=2023-07-01&currency=CAD%2FCNY&pageNum=1&pageSize=30",
+      "2023-08-01: 403 Client Error: Forbidden for url: https://www.chinamoney.com.cn/ags/ms/cm-u-bk-ccpr/CcprHisNew?startDate=2023-07-18&endDate=2023-08-01&currency=CAD%2FCNY&pageNum=1&pageSize=30"
+    ],
+    "CHF": [
+      "2023-01-01: 403 Client Error: Forbidden for url: https://www.chinamoney.com.cn/ags/ms/cm-u-bk-ccpr/CcprHisNew?startDate=2022-12-18&endDate=2023-01-01&currency=CHF%2FCNY&pageNum=1&pageSize=30",
+      "2023-02-01: 403 Client Error: Forbidden for url: https://www.chinamoney.com.cn/ags/ms/cm-u-bk-ccpr/CcprHisNew?startDate=2023-01-18&endDate=2023-02-01&currency=CHF%2FCNY&pageNum=1&pageSize=30",
+      "2023-03-01: 403 Client Error: Forbidden for url: https://www.chinamoney.com.cn/ags/ms/cm-u-bk-ccpr/CcprHisNew?startDate=2023-02-15&endDate=2023-03-01&currency=CHF%2FCNY&pageNum=1&pageSize=30",
+      "2023-04-01: 403 Client Error: Forbidden for url: https://www.chinamoney.com.cn/ags/ms/cm-u-bk-ccpr/CcprHisNew?startDate=2023-03-18&endDate=2023-04-01&currency=CHF%2FCNY&pageNum=1&pageSize=30",
+      "2023-05-01: 403 Client Error: Forbidden for url: https://www.chinamoney.com.cn/ags/ms/cm-u-bk-ccpr/CcprHisNew?startDate=2023-04-17&endDate=2023-05-01&currency=CHF%2FCNY&pageNum=1&pageSize=30",
+      "2023-06-01: 403 Client Error: Forbidden for url: https://www.chinamoney.com.cn/ags/ms/cm-u-bk-ccpr/CcprHisNew?startDate=2023-05-18&endDate=2023-06-01&currency=CHF%2FCNY&pageNum=1&pageSize=30",
+      "2023-07-01: 403 Client Error: Forbidden for url: https://www.chinamoney.com.cn/ags/ms/cm-u-bk-ccpr/CcprHisNew?startDate=2023-06-17&endDate=2023-07-01&currency=CHF%2FCNY&pageNum=1&pageSize=30",
+      "2023-08-01: 403 Client Error: Forbidden for url: https://www.chinamoney.com.cn/ags/ms/cm-u-bk-ccpr/CcprHisNew?startDate=2023-07-18&endDate=2023-08-01&currency=CHF%2FCNY&pageNum=1&pageSize=30"
     ],
     "DKK": [
-      "2023-01-01: no record",
-      "2023-02-01: no record",
-      "2023-03-01: no record",
-      "2023-04-01: no record",
-      "2023-05-01: no record",
-      "2023-06-01: no record",
-      "2023-07-01: no record",
-      "2023-08-01: no record"
+      "2023-01-01: 403 Client Error: Forbidden for url: https://www.chinamoney.com.cn/ags/ms/cm-u-bk-ccpr/CcprHisNew?startDate=2022-12-18&endDate=2023-01-01&currency=DKK%2FCNY&pageNum=1&pageSize=30",
+      "2023-02-01: 403 Client Error: Forbidden for url: https://www.chinamoney.com.cn/ags/ms/cm-u-bk-ccpr/CcprHisNew?startDate=2023-01-18&endDate=2023-02-01&currency=DKK%2FCNY&pageNum=1&pageSize=30",
+      "2023-03-01: 403 Client Error: Forbidden for url: https://www.chinamoney.com.cn/ags/ms/cm-u-bk-ccpr/CcprHisNew?startDate=2023-02-15&endDate=2023-03-01&currency=DKK%2FCNY&pageNum=1&pageSize=30",
+      "2023-04-01: 403 Client Error: Forbidden for url: https://www.chinamoney.com.cn/ags/ms/cm-u-bk-ccpr/CcprHisNew?startDate=2023-03-18&endDate=2023-04-01&currency=DKK%2FCNY&pageNum=1&pageSize=30",
+      "2023-05-01: 403 Client Error: Forbidden for url: https://www.chinamoney.com.cn/ags/ms/cm-u-bk-ccpr/CcprHisNew?startDate=2023-04-17&endDate=2023-05-01&currency=DKK%2FCNY&pageNum=1&pageSize=30",
+      "2023-06-01: 403 Client Error: Forbidden for url: https://www.chinamoney.com.cn/ags/ms/cm-u-bk-ccpr/CcprHisNew?startDate=2023-05-18&endDate=2023-06-01&currency=DKK%2FCNY&pageNum=1&pageSize=30",
+      "2023-07-01: 403 Client Error: Forbidden for url: https://www.chinamoney.com.cn/ags/ms/cm-u-bk-ccpr/CcprHisNew?startDate=2023-06-17&endDate=2023-07-01&currency=DKK%2FCNY&pageNum=1&pageSize=30",
+      "2023-08-01: 403 Client Error: Forbidden for url: https://www.chinamoney.com.cn/ags/ms/cm-u-bk-ccpr/CcprHisNew?startDate=2023-07-18&endDate=2023-08-01&currency=DKK%2FCNY&pageNum=1&pageSize=30"
+    ],
+    "EUR": [
+      "2023-01-01: 403 Client Error: Forbidden for url: https://www.chinamoney.com.cn/ags/ms/cm-u-bk-ccpr/CcprHisNew?startDate=2022-12-18&endDate=2023-01-01&currency=EUR%2FCNY&pageNum=1&pageSize=30",
+      "2023-02-01: 403 Client Error: Forbidden for url: https://www.chinamoney.com.cn/ags/ms/cm-u-bk-ccpr/CcprHisNew?startDate=2023-01-18&endDate=2023-02-01&currency=EUR%2FCNY&pageNum=1&pageSize=30",
+      "2023-03-01: 403 Client Error: Forbidden for url: https://www.chinamoney.com.cn/ags/ms/cm-u-bk-ccpr/CcprHisNew?startDate=2023-02-15&endDate=2023-03-01&currency=EUR%2FCNY&pageNum=1&pageSize=30",
+      "2023-04-01: 403 Client Error: Forbidden for url: https://www.chinamoney.com.cn/ags/ms/cm-u-bk-ccpr/CcprHisNew?startDate=2023-03-18&endDate=2023-04-01&currency=EUR%2FCNY&pageNum=1&pageSize=30",
+      "2023-05-01: 403 Client Error: Forbidden for url: https://www.chinamoney.com.cn/ags/ms/cm-u-bk-ccpr/CcprHisNew?startDate=2023-04-17&endDate=2023-05-01&currency=EUR%2FCNY&pageNum=1&pageSize=30",
+      "2023-06-01: 403 Client Error: Forbidden for url: https://www.chinamoney.com.cn/ags/ms/cm-u-bk-ccpr/CcprHisNew?startDate=2023-05-18&endDate=2023-06-01&currency=EUR%2FCNY&pageNum=1&pageSize=30",
+      "2023-07-01: 403 Client Error: Forbidden for url: https://www.chinamoney.com.cn/ags/ms/cm-u-bk-ccpr/CcprHisNew?startDate=2023-06-17&endDate=2023-07-01&currency=EUR%2FCNY&pageNum=1&pageSize=30",
+      "2023-08-01: 403 Client Error: Forbidden for url: https://www.chinamoney.com.cn/ags/ms/cm-u-bk-ccpr/CcprHisNew?startDate=2023-07-18&endDate=2023-08-01&currency=EUR%2FCNY&pageNum=1&pageSize=30"
+    ],
+    "GBP": [
+      "2023-01-01: 403 Client Error: Forbidden for url: https://www.chinamoney.com.cn/ags/ms/cm-u-bk-ccpr/CcprHisNew?startDate=2022-12-18&endDate=2023-01-01&currency=GBP%2FCNY&pageNum=1&pageSize=30",
+      "2023-02-01: 403 Client Error: Forbidden for url: https://www.chinamoney.com.cn/ags/ms/cm-u-bk-ccpr/CcprHisNew?startDate=2023-01-18&endDate=2023-02-01&currency=GBP%2FCNY&pageNum=1&pageSize=30",
+      "2023-03-01: 403 Client Error: Forbidden for url: https://www.chinamoney.com.cn/ags/ms/cm-u-bk-ccpr/CcprHisNew?startDate=2023-02-15&endDate=2023-03-01&currency=GBP%2FCNY&pageNum=1&pageSize=30",
+      "2023-04-01: 403 Client Error: Forbidden for url: https://www.chinamoney.com.cn/ags/ms/cm-u-bk-ccpr/CcprHisNew?startDate=2023-03-18&endDate=2023-04-01&currency=GBP%2FCNY&pageNum=1&pageSize=30",
+      "2023-05-01: 403 Client Error: Forbidden for url: https://www.chinamoney.com.cn/ags/ms/cm-u-bk-ccpr/CcprHisNew?startDate=2023-04-17&endDate=2023-05-01&currency=GBP%2FCNY&pageNum=1&pageSize=30",
+      "2023-06-01: 403 Client Error: Forbidden for url: https://www.chinamoney.com.cn/ags/ms/cm-u-bk-ccpr/CcprHisNew?startDate=2023-05-18&endDate=2023-06-01&currency=GBP%2FCNY&pageNum=1&pageSize=30",
+      "2023-07-01: 403 Client Error: Forbidden for url: https://www.chinamoney.com.cn/ags/ms/cm-u-bk-ccpr/CcprHisNew?startDate=2023-06-17&endDate=2023-07-01&currency=GBP%2FCNY&pageNum=1&pageSize=30",
+      "2023-08-01: 403 Client Error: Forbidden for url: https://www.chinamoney.com.cn/ags/ms/cm-u-bk-ccpr/CcprHisNew?startDate=2023-07-18&endDate=2023-08-01&currency=GBP%2FCNY&pageNum=1&pageSize=30"
+    ],
+    "HKD": [
+      "2023-01-01: 403 Client Error: Forbidden for url: https://www.chinamoney.com.cn/ags/ms/cm-u-bk-ccpr/CcprHisNew?startDate=2022-12-18&endDate=2023-01-01&currency=HKD%2FCNY&pageNum=1&pageSize=30",
+      "2023-02-01: 403 Client Error: Forbidden for url: https://www.chinamoney.com.cn/ags/ms/cm-u-bk-ccpr/CcprHisNew?startDate=2023-01-18&endDate=2023-02-01&currency=HKD%2FCNY&pageNum=1&pageSize=30",
+      "2023-03-01: 403 Client Error: Forbidden for url: https://www.chinamoney.com.cn/ags/ms/cm-u-bk-ccpr/CcprHisNew?startDate=2023-02-15&endDate=2023-03-01&currency=HKD%2FCNY&pageNum=1&pageSize=30",
+      "2023-04-01: 403 Client Error: Forbidden for url: https://www.chinamoney.com.cn/ags/ms/cm-u-bk-ccpr/CcprHisNew?startDate=2023-03-18&endDate=2023-04-01&currency=HKD%2FCNY&pageNum=1&pageSize=30",
+      "2023-05-01: 403 Client Error: Forbidden for url: https://www.chinamoney.com.cn/ags/ms/cm-u-bk-ccpr/CcprHisNew?startDate=2023-04-17&endDate=2023-05-01&currency=HKD%2FCNY&pageNum=1&pageSize=30",
+      "2023-06-01: 403 Client Error: Forbidden for url: https://www.chinamoney.com.cn/ags/ms/cm-u-bk-ccpr/CcprHisNew?startDate=2023-05-18&endDate=2023-06-01&currency=HKD%2FCNY&pageNum=1&pageSize=30",
+      "2023-07-01: 403 Client Error: Forbidden for url: https://www.chinamoney.com.cn/ags/ms/cm-u-bk-ccpr/CcprHisNew?startDate=2023-06-17&endDate=2023-07-01&currency=HKD%2FCNY&pageNum=1&pageSize=30",
+      "2023-08-01: 403 Client Error: Forbidden for url: https://www.chinamoney.com.cn/ags/ms/cm-u-bk-ccpr/CcprHisNew?startDate=2023-07-18&endDate=2023-08-01&currency=HKD%2FCNY&pageNum=1&pageSize=30"
     ],
     "HUF": [
-      "2023-01-01: no record",
-      "2023-02-01: no record",
-      "2023-03-01: no record",
-      "2023-04-01: no record",
-      "2023-05-01: no record",
-      "2023-06-01: no record",
-      "2023-07-01: no record",
-      "2023-08-01: no record"
+      "2023-01-01: 403 Client Error: Forbidden for url: https://www.chinamoney.com.cn/ags/ms/cm-u-bk-ccpr/CcprHisNew?startDate=2022-12-18&endDate=2023-01-01&currency=HUF%2FCNY&pageNum=1&pageSize=30",
+      "2023-02-01: 403 Client Error: Forbidden for url: https://www.chinamoney.com.cn/ags/ms/cm-u-bk-ccpr/CcprHisNew?startDate=2023-01-18&endDate=2023-02-01&currency=HUF%2FCNY&pageNum=1&pageSize=30",
+      "2023-03-01: 403 Client Error: Forbidden for url: https://www.chinamoney.com.cn/ags/ms/cm-u-bk-ccpr/CcprHisNew?startDate=2023-02-15&endDate=2023-03-01&currency=HUF%2FCNY&pageNum=1&pageSize=30",
+      "2023-04-01: 403 Client Error: Forbidden for url: https://www.chinamoney.com.cn/ags/ms/cm-u-bk-ccpr/CcprHisNew?startDate=2023-03-18&endDate=2023-04-01&currency=HUF%2FCNY&pageNum=1&pageSize=30",
+      "2023-05-01: 403 Client Error: Forbidden for url: https://www.chinamoney.com.cn/ags/ms/cm-u-bk-ccpr/CcprHisNew?startDate=2023-04-17&endDate=2023-05-01&currency=HUF%2FCNY&pageNum=1&pageSize=30",
+      "2023-06-01: 403 Client Error: Forbidden for url: https://www.chinamoney.com.cn/ags/ms/cm-u-bk-ccpr/CcprHisNew?startDate=2023-05-18&endDate=2023-06-01&currency=HUF%2FCNY&pageNum=1&pageSize=30",
+      "2023-07-01: 403 Client Error: Forbidden for url: https://www.chinamoney.com.cn/ags/ms/cm-u-bk-ccpr/CcprHisNew?startDate=2023-06-17&endDate=2023-07-01&currency=HUF%2FCNY&pageNum=1&pageSize=30",
+      "2023-08-01: 403 Client Error: Forbidden for url: https://www.chinamoney.com.cn/ags/ms/cm-u-bk-ccpr/CcprHisNew?startDate=2023-07-18&endDate=2023-08-01&currency=HUF%2FCNY&pageNum=1&pageSize=30"
     ],
     "JPY": [
-      "2023-01-01: no record",
-      "2023-02-01: no record",
-      "2023-03-01: no record",
-      "2023-04-01: no record",
-      "2023-05-01: no record",
-      "2023-06-01: no record",
-      "2023-07-01: no record",
-      "2023-08-01: no record"
+      "2023-01-01: 403 Client Error: Forbidden for url: https://www.chinamoney.com.cn/ags/ms/cm-u-bk-ccpr/CcprHisNew?startDate=2022-12-18&endDate=2023-01-01&currency=JPY%2FCNY&pageNum=1&pageSize=30",
+      "2023-02-01: 403 Client Error: Forbidden for url: https://www.chinamoney.com.cn/ags/ms/cm-u-bk-ccpr/CcprHisNew?startDate=2023-01-18&endDate=2023-02-01&currency=JPY%2FCNY&pageNum=1&pageSize=30",
+      "2023-03-01: 403 Client Error: Forbidden for url: https://www.chinamoney.com.cn/ags/ms/cm-u-bk-ccpr/CcprHisNew?startDate=2023-02-15&endDate=2023-03-01&currency=JPY%2FCNY&pageNum=1&pageSize=30",
+      "2023-04-01: 403 Client Error: Forbidden for url: https://www.chinamoney.com.cn/ags/ms/cm-u-bk-ccpr/CcprHisNew?startDate=2023-03-18&endDate=2023-04-01&currency=JPY%2FCNY&pageNum=1&pageSize=30",
+      "2023-05-01: 403 Client Error: Forbidden for url: https://www.chinamoney.com.cn/ags/ms/cm-u-bk-ccpr/CcprHisNew?startDate=2023-04-17&endDate=2023-05-01&currency=JPY%2FCNY&pageNum=1&pageSize=30",
+      "2023-06-01: 403 Client Error: Forbidden for url: https://www.chinamoney.com.cn/ags/ms/cm-u-bk-ccpr/CcprHisNew?startDate=2023-05-18&endDate=2023-06-01&currency=JPY%2FCNY&pageNum=1&pageSize=30",
+      "2023-07-01: 403 Client Error: Forbidden for url: https://www.chinamoney.com.cn/ags/ms/cm-u-bk-ccpr/CcprHisNew?startDate=2023-06-17&endDate=2023-07-01&currency=JPY%2FCNY&pageNum=1&pageSize=30",
+      "2023-08-01: 403 Client Error: Forbidden for url: https://www.chinamoney.com.cn/ags/ms/cm-u-bk-ccpr/CcprHisNew?startDate=2023-07-18&endDate=2023-08-01&currency=JPY%2FCNY&pageNum=1&pageSize=30"
     ],
     "KRW": [
-      "2023-01-01: no record",
-      "2023-02-01: no record",
-      "2023-03-01: no record",
-      "2023-04-01: no record",
-      "2023-05-01: no record",
-      "2023-06-01: no record",
-      "2023-07-01: no record",
-      "2023-08-01: no record"
+      "2023-01-01: 403 Client Error: Forbidden for url: https://www.chinamoney.com.cn/ags/ms/cm-u-bk-ccpr/CcprHisNew?startDate=2022-12-18&endDate=2023-01-01&currency=KRW%2FCNY&pageNum=1&pageSize=30",
+      "2023-02-01: 403 Client Error: Forbidden for url: https://www.chinamoney.com.cn/ags/ms/cm-u-bk-ccpr/CcprHisNew?startDate=2023-01-18&endDate=2023-02-01&currency=KRW%2FCNY&pageNum=1&pageSize=30",
+      "2023-03-01: 403 Client Error: Forbidden for url: https://www.chinamoney.com.cn/ags/ms/cm-u-bk-ccpr/CcprHisNew?startDate=2023-02-15&endDate=2023-03-01&currency=KRW%2FCNY&pageNum=1&pageSize=30",
+      "2023-04-01: 403 Client Error: Forbidden for url: https://www.chinamoney.com.cn/ags/ms/cm-u-bk-ccpr/CcprHisNew?startDate=2023-03-18&endDate=2023-04-01&currency=KRW%2FCNY&pageNum=1&pageSize=30",
+      "2023-05-01: 403 Client Error: Forbidden for url: https://www.chinamoney.com.cn/ags/ms/cm-u-bk-ccpr/CcprHisNew?startDate=2023-04-17&endDate=2023-05-01&currency=KRW%2FCNY&pageNum=1&pageSize=30",
+      "2023-06-01: 403 Client Error: Forbidden for url: https://www.chinamoney.com.cn/ags/ms/cm-u-bk-ccpr/CcprHisNew?startDate=2023-05-18&endDate=2023-06-01&currency=KRW%2FCNY&pageNum=1&pageSize=30",
+      "2023-07-01: 403 Client Error: Forbidden for url: https://www.chinamoney.com.cn/ags/ms/cm-u-bk-ccpr/CcprHisNew?startDate=2023-06-17&endDate=2023-07-01&currency=KRW%2FCNY&pageNum=1&pageSize=30",
+      "2023-08-01: 403 Client Error: Forbidden for url: https://www.chinamoney.com.cn/ags/ms/cm-u-bk-ccpr/CcprHisNew?startDate=2023-07-18&endDate=2023-08-01&currency=KRW%2FCNY&pageNum=1&pageSize=30"
     ],
     "MOP": [
-      "2023-01-01: no record",
-      "2023-02-01: no record",
-      "2023-03-01: no record",
-      "2023-04-01: no record",
-      "2023-05-01: no record",
-      "2023-06-01: no record",
-      "2023-07-01: no record",
-      "2023-08-01: no record"
+      "2023-01-01: 403 Client Error: Forbidden for url: https://www.chinamoney.com.cn/ags/ms/cm-u-bk-ccpr/CcprHisNew?startDate=2022-12-18&endDate=2023-01-01&currency=MOP%2FCNY&pageNum=1&pageSize=30",
+      "2023-02-01: 403 Client Error: Forbidden for url: https://www.chinamoney.com.cn/ags/ms/cm-u-bk-ccpr/CcprHisNew?startDate=2023-01-18&endDate=2023-02-01&currency=MOP%2FCNY&pageNum=1&pageSize=30",
+      "2023-03-01: 403 Client Error: Forbidden for url: https://www.chinamoney.com.cn/ags/ms/cm-u-bk-ccpr/CcprHisNew?startDate=2023-02-15&endDate=2023-03-01&currency=MOP%2FCNY&pageNum=1&pageSize=30",
+      "2023-04-01: 403 Client Error: Forbidden for url: https://www.chinamoney.com.cn/ags/ms/cm-u-bk-ccpr/CcprHisNew?startDate=2023-03-18&endDate=2023-04-01&currency=MOP%2FCNY&pageNum=1&pageSize=30",
+      "2023-05-01: 403 Client Error: Forbidden for url: https://www.chinamoney.com.cn/ags/ms/cm-u-bk-ccpr/CcprHisNew?startDate=2023-04-17&endDate=2023-05-01&currency=MOP%2FCNY&pageNum=1&pageSize=30",
+      "2023-06-01: 403 Client Error: Forbidden for url: https://www.chinamoney.com.cn/ags/ms/cm-u-bk-ccpr/CcprHisNew?startDate=2023-05-18&endDate=2023-06-01&currency=MOP%2FCNY&pageNum=1&pageSize=30",
+      "2023-07-01: 403 Client Error: Forbidden for url: https://www.chinamoney.com.cn/ags/ms/cm-u-bk-ccpr/CcprHisNew?startDate=2023-06-17&endDate=2023-07-01&currency=MOP%2FCNY&pageNum=1&pageSize=30",
+      "2023-08-01: 403 Client Error: Forbidden for url: https://www.chinamoney.com.cn/ags/ms/cm-u-bk-ccpr/CcprHisNew?startDate=2023-07-18&endDate=2023-08-01&currency=MOP%2FCNY&pageNum=1&pageSize=30"
     ],
     "MXN": [
-      "2023-01-01: no record",
-      "2023-02-01: no record",
-      "2023-03-01: no record",
-      "2023-04-01: no record",
-      "2023-05-01: no record",
-      "2023-06-01: no record",
-      "2023-07-01: no record",
-      "2023-08-01: no record"
+      "2023-01-01: 403 Client Error: Forbidden for url: https://www.chinamoney.com.cn/ags/ms/cm-u-bk-ccpr/CcprHisNew?startDate=2022-12-18&endDate=2023-01-01&currency=MXN%2FCNY&pageNum=1&pageSize=30",
+      "2023-02-01: 403 Client Error: Forbidden for url: https://www.chinamoney.com.cn/ags/ms/cm-u-bk-ccpr/CcprHisNew?startDate=2023-01-18&endDate=2023-02-01&currency=MXN%2FCNY&pageNum=1&pageSize=30",
+      "2023-03-01: 403 Client Error: Forbidden for url: https://www.chinamoney.com.cn/ags/ms/cm-u-bk-ccpr/CcprHisNew?startDate=2023-02-15&endDate=2023-03-01&currency=MXN%2FCNY&pageNum=1&pageSize=30",
+      "2023-04-01: 403 Client Error: Forbidden for url: https://www.chinamoney.com.cn/ags/ms/cm-u-bk-ccpr/CcprHisNew?startDate=2023-03-18&endDate=2023-04-01&currency=MXN%2FCNY&pageNum=1&pageSize=30",
+      "2023-05-01: 403 Client Error: Forbidden for url: https://www.chinamoney.com.cn/ags/ms/cm-u-bk-ccpr/CcprHisNew?startDate=2023-04-17&endDate=2023-05-01&currency=MXN%2FCNY&pageNum=1&pageSize=30",
+      "2023-06-01: 403 Client Error: Forbidden for url: https://www.chinamoney.com.cn/ags/ms/cm-u-bk-ccpr/CcprHisNew?startDate=2023-05-18&endDate=2023-06-01&currency=MXN%2FCNY&pageNum=1&pageSize=30",
+      "2023-07-01: 403 Client Error: Forbidden for url: https://www.chinamoney.com.cn/ags/ms/cm-u-bk-ccpr/CcprHisNew?startDate=2023-06-17&endDate=2023-07-01&currency=MXN%2FCNY&pageNum=1&pageSize=30",
+      "2023-08-01: 403 Client Error: Forbidden for url: https://www.chinamoney.com.cn/ags/ms/cm-u-bk-ccpr/CcprHisNew?startDate=2023-07-18&endDate=2023-08-01&currency=MXN%2FCNY&pageNum=1&pageSize=30"
     ],
     "MYR": [
-      "2023-01-01: no record",
-      "2023-02-01: no record",
-      "2023-03-01: no record",
-      "2023-04-01: no record",
-      "2023-05-01: no record",
-      "2023-06-01: no record",
-      "2023-07-01: no record",
-      "2023-08-01: no record"
+      "2023-01-01: 403 Client Error: Forbidden for url: https://www.chinamoney.com.cn/ags/ms/cm-u-bk-ccpr/CcprHisNew?startDate=2022-12-18&endDate=2023-01-01&currency=MYR%2FCNY&pageNum=1&pageSize=30",
+      "2023-02-01: 403 Client Error: Forbidden for url: https://www.chinamoney.com.cn/ags/ms/cm-u-bk-ccpr/CcprHisNew?startDate=2023-01-18&endDate=2023-02-01&currency=MYR%2FCNY&pageNum=1&pageSize=30",
+      "2023-03-01: 403 Client Error: Forbidden for url: https://www.chinamoney.com.cn/ags/ms/cm-u-bk-ccpr/CcprHisNew?startDate=2023-02-15&endDate=2023-03-01&currency=MYR%2FCNY&pageNum=1&pageSize=30",
+      "2023-04-01: 403 Client Error: Forbidden for url: https://www.chinamoney.com.cn/ags/ms/cm-u-bk-ccpr/CcprHisNew?startDate=2023-03-18&endDate=2023-04-01&currency=MYR%2FCNY&pageNum=1&pageSize=30",
+      "2023-05-01: 403 Client Error: Forbidden for url: https://www.chinamoney.com.cn/ags/ms/cm-u-bk-ccpr/CcprHisNew?startDate=2023-04-17&endDate=2023-05-01&currency=MYR%2FCNY&pageNum=1&pageSize=30",
+      "2023-06-01: 403 Client Error: Forbidden for url: https://www.chinamoney.com.cn/ags/ms/cm-u-bk-ccpr/CcprHisNew?startDate=2023-05-18&endDate=2023-06-01&currency=MYR%2FCNY&pageNum=1&pageSize=30",
+      "2023-07-01: 403 Client Error: Forbidden for url: https://www.chinamoney.com.cn/ags/ms/cm-u-bk-ccpr/CcprHisNew?startDate=2023-06-17&endDate=2023-07-01&currency=MYR%2FCNY&pageNum=1&pageSize=30",
+      "2023-08-01: 403 Client Error: Forbidden for url: https://www.chinamoney.com.cn/ags/ms/cm-u-bk-ccpr/CcprHisNew?startDate=2023-07-18&endDate=2023-08-01&currency=MYR%2FCNY&pageNum=1&pageSize=30"
     ],
     "NOK": [
-      "2023-01-01: no record",
-      "2023-02-01: no record",
-      "2023-03-01: no record",
-      "2023-04-01: no record",
-      "2023-05-01: no record",
-      "2023-06-01: no record",
-      "2023-07-01: no record",
-      "2023-08-01: no record"
+      "2023-01-01: 403 Client Error: Forbidden for url: https://www.chinamoney.com.cn/ags/ms/cm-u-bk-ccpr/CcprHisNew?startDate=2022-12-18&endDate=2023-01-01&currency=NOK%2FCNY&pageNum=1&pageSize=30",
+      "2023-02-01: 403 Client Error: Forbidden for url: https://www.chinamoney.com.cn/ags/ms/cm-u-bk-ccpr/CcprHisNew?startDate=2023-01-18&endDate=2023-02-01&currency=NOK%2FCNY&pageNum=1&pageSize=30",
+      "2023-03-01: 403 Client Error: Forbidden for url: https://www.chinamoney.com.cn/ags/ms/cm-u-bk-ccpr/CcprHisNew?startDate=2023-02-15&endDate=2023-03-01&currency=NOK%2FCNY&pageNum=1&pageSize=30",
+      "2023-04-01: 403 Client Error: Forbidden for url: https://www.chinamoney.com.cn/ags/ms/cm-u-bk-ccpr/CcprHisNew?startDate=2023-03-18&endDate=2023-04-01&currency=NOK%2FCNY&pageNum=1&pageSize=30",
+      "2023-05-01: 403 Client Error: Forbidden for url: https://www.chinamoney.com.cn/ags/ms/cm-u-bk-ccpr/CcprHisNew?startDate=2023-04-17&endDate=2023-05-01&currency=NOK%2FCNY&pageNum=1&pageSize=30",
+      "2023-06-01: 403 Client Error: Forbidden for url: https://www.chinamoney.com.cn/ags/ms/cm-u-bk-ccpr/CcprHisNew?startDate=2023-05-18&endDate=2023-06-01&currency=NOK%2FCNY&pageNum=1&pageSize=30",
+      "2023-07-01: 403 Client Error: Forbidden for url: https://www.chinamoney.com.cn/ags/ms/cm-u-bk-ccpr/CcprHisNew?startDate=2023-06-17&endDate=2023-07-01&currency=NOK%2FCNY&pageNum=1&pageSize=30",
+      "2023-08-01: 403 Client Error: Forbidden for url: https://www.chinamoney.com.cn/ags/ms/cm-u-bk-ccpr/CcprHisNew?startDate=2023-07-18&endDate=2023-08-01&currency=NOK%2FCNY&pageNum=1&pageSize=30"
+    ],
+    "NZD": [
+      "2023-01-01: 403 Client Error: Forbidden for url: https://www.chinamoney.com.cn/ags/ms/cm-u-bk-ccpr/CcprHisNew?startDate=2022-12-18&endDate=2023-01-01&currency=NZD%2FCNY&pageNum=1&pageSize=30",
+      "2023-02-01: 403 Client Error: Forbidden for url: https://www.chinamoney.com.cn/ags/ms/cm-u-bk-ccpr/CcprHisNew?startDate=2023-01-18&endDate=2023-02-01&currency=NZD%2FCNY&pageNum=1&pageSize=30",
+      "2023-03-01: 403 Client Error: Forbidden for url: https://www.chinamoney.com.cn/ags/ms/cm-u-bk-ccpr/CcprHisNew?startDate=2023-02-15&endDate=2023-03-01&currency=NZD%2FCNY&pageNum=1&pageSize=30",
+      "2023-04-01: 403 Client Error: Forbidden for url: https://www.chinamoney.com.cn/ags/ms/cm-u-bk-ccpr/CcprHisNew?startDate=2023-03-18&endDate=2023-04-01&currency=NZD%2FCNY&pageNum=1&pageSize=30",
+      "2023-05-01: 403 Client Error: Forbidden for url: https://www.chinamoney.com.cn/ags/ms/cm-u-bk-ccpr/CcprHisNew?startDate=2023-04-17&endDate=2023-05-01&currency=NZD%2FCNY&pageNum=1&pageSize=30",
+      "2023-06-01: 403 Client Error: Forbidden for url: https://www.chinamoney.com.cn/ags/ms/cm-u-bk-ccpr/CcprHisNew?startDate=2023-05-18&endDate=2023-06-01&currency=NZD%2FCNY&pageNum=1&pageSize=30",
+      "2023-07-01: 403 Client Error: Forbidden for url: https://www.chinamoney.com.cn/ags/ms/cm-u-bk-ccpr/CcprHisNew?startDate=2023-06-17&endDate=2023-07-01&currency=NZD%2FCNY&pageNum=1&pageSize=30",
+      "2023-08-01: 403 Client Error: Forbidden for url: https://www.chinamoney.com.cn/ags/ms/cm-u-bk-ccpr/CcprHisNew?startDate=2023-07-18&endDate=2023-08-01&currency=NZD%2FCNY&pageNum=1&pageSize=30"
     ],
     "PLN": [
-      "2023-01-01: no record",
-      "2023-02-01: no record",
-      "2023-03-01: no record",
-      "2023-04-01: no record",
-      "2023-05-01: no record",
-      "2023-06-01: no record",
-      "2023-07-01: no record",
-      "2023-08-01: no record"
+      "2023-01-01: 403 Client Error: Forbidden for url: https://www.chinamoney.com.cn/ags/ms/cm-u-bk-ccpr/CcprHisNew?startDate=2022-12-18&endDate=2023-01-01&currency=PLN%2FCNY&pageNum=1&pageSize=30",
+      "2023-02-01: 403 Client Error: Forbidden for url: https://www.chinamoney.com.cn/ags/ms/cm-u-bk-ccpr/CcprHisNew?startDate=2023-01-18&endDate=2023-02-01&currency=PLN%2FCNY&pageNum=1&pageSize=30",
+      "2023-03-01: 403 Client Error: Forbidden for url: https://www.chinamoney.com.cn/ags/ms/cm-u-bk-ccpr/CcprHisNew?startDate=2023-02-15&endDate=2023-03-01&currency=PLN%2FCNY&pageNum=1&pageSize=30",
+      "2023-04-01: 403 Client Error: Forbidden for url: https://www.chinamoney.com.cn/ags/ms/cm-u-bk-ccpr/CcprHisNew?startDate=2023-03-18&endDate=2023-04-01&currency=PLN%2FCNY&pageNum=1&pageSize=30",
+      "2023-05-01: 403 Client Error: Forbidden for url: https://www.chinamoney.com.cn/ags/ms/cm-u-bk-ccpr/CcprHisNew?startDate=2023-04-17&endDate=2023-05-01&currency=PLN%2FCNY&pageNum=1&pageSize=30",
+      "2023-06-01: 403 Client Error: Forbidden for url: https://www.chinamoney.com.cn/ags/ms/cm-u-bk-ccpr/CcprHisNew?startDate=2023-05-18&endDate=2023-06-01&currency=PLN%2FCNY&pageNum=1&pageSize=30",
+      "2023-07-01: 403 Client Error: Forbidden for url: https://www.chinamoney.com.cn/ags/ms/cm-u-bk-ccpr/CcprHisNew?startDate=2023-06-17&endDate=2023-07-01&currency=PLN%2FCNY&pageNum=1&pageSize=30",
+      "2023-08-01: 403 Client Error: Forbidden for url: https://www.chinamoney.com.cn/ags/ms/cm-u-bk-ccpr/CcprHisNew?startDate=2023-07-18&endDate=2023-08-01&currency=PLN%2FCNY&pageNum=1&pageSize=30"
     ],
     "RUB": [
-      "2023-01-01: no record",
-      "2023-02-01: no record",
-      "2023-03-01: no record",
-      "2023-04-01: no record",
-      "2023-05-01: no record",
-      "2023-06-01: no record",
-      "2023-07-01: no record",
-      "2023-08-01: no record"
+      "2023-01-01: 403 Client Error: Forbidden for url: https://www.chinamoney.com.cn/ags/ms/cm-u-bk-ccpr/CcprHisNew?startDate=2022-12-18&endDate=2023-01-01&currency=RUB%2FCNY&pageNum=1&pageSize=30",
+      "2023-02-01: 403 Client Error: Forbidden for url: https://www.chinamoney.com.cn/ags/ms/cm-u-bk-ccpr/CcprHisNew?startDate=2023-01-18&endDate=2023-02-01&currency=RUB%2FCNY&pageNum=1&pageSize=30",
+      "2023-03-01: 403 Client Error: Forbidden for url: https://www.chinamoney.com.cn/ags/ms/cm-u-bk-ccpr/CcprHisNew?startDate=2023-02-15&endDate=2023-03-01&currency=RUB%2FCNY&pageNum=1&pageSize=30",
+      "2023-04-01: 403 Client Error: Forbidden for url: https://www.chinamoney.com.cn/ags/ms/cm-u-bk-ccpr/CcprHisNew?startDate=2023-03-18&endDate=2023-04-01&currency=RUB%2FCNY&pageNum=1&pageSize=30",
+      "2023-05-01: 403 Client Error: Forbidden for url: https://www.chinamoney.com.cn/ags/ms/cm-u-bk-ccpr/CcprHisNew?startDate=2023-04-17&endDate=2023-05-01&currency=RUB%2FCNY&pageNum=1&pageSize=30",
+      "2023-06-01: 403 Client Error: Forbidden for url: https://www.chinamoney.com.cn/ags/ms/cm-u-bk-ccpr/CcprHisNew?startDate=2023-05-18&endDate=2023-06-01&currency=RUB%2FCNY&pageNum=1&pageSize=30",
+      "2023-07-01: 403 Client Error: Forbidden for url: https://www.chinamoney.com.cn/ags/ms/cm-u-bk-ccpr/CcprHisNew?startDate=2023-06-17&endDate=2023-07-01&currency=RUB%2FCNY&pageNum=1&pageSize=30",
+      "2023-08-01: 403 Client Error: Forbidden for url: https://www.chinamoney.com.cn/ags/ms/cm-u-bk-ccpr/CcprHisNew?startDate=2023-07-18&endDate=2023-08-01&currency=RUB%2FCNY&pageNum=1&pageSize=30"
     ],
     "SAR": [
-      "2023-01-01: no record",
-      "2023-02-01: no record",
-      "2023-03-01: no record",
-      "2023-04-01: no record",
-      "2023-05-01: no record",
-      "2023-06-01: no record",
-      "2023-07-01: no record",
-      "2023-08-01: no record"
+      "2023-01-01: 403 Client Error: Forbidden for url: https://www.chinamoney.com.cn/ags/ms/cm-u-bk-ccpr/CcprHisNew?startDate=2022-12-18&endDate=2023-01-01&currency=SAR%2FCNY&pageNum=1&pageSize=30",
+      "2023-02-01: 403 Client Error: Forbidden for url: https://www.chinamoney.com.cn/ags/ms/cm-u-bk-ccpr/CcprHisNew?startDate=2023-01-18&endDate=2023-02-01&currency=SAR%2FCNY&pageNum=1&pageSize=30",
+      "2023-03-01: 403 Client Error: Forbidden for url: https://www.chinamoney.com.cn/ags/ms/cm-u-bk-ccpr/CcprHisNew?startDate=2023-02-15&endDate=2023-03-01&currency=SAR%2FCNY&pageNum=1&pageSize=30",
+      "2023-04-01: 403 Client Error: Forbidden for url: https://www.chinamoney.com.cn/ags/ms/cm-u-bk-ccpr/CcprHisNew?startDate=2023-03-18&endDate=2023-04-01&currency=SAR%2FCNY&pageNum=1&pageSize=30",
+      "2023-05-01: 403 Client Error: Forbidden for url: https://www.chinamoney.com.cn/ags/ms/cm-u-bk-ccpr/CcprHisNew?startDate=2023-04-17&endDate=2023-05-01&currency=SAR%2FCNY&pageNum=1&pageSize=30",
+      "2023-06-01: 403 Client Error: Forbidden for url: https://www.chinamoney.com.cn/ags/ms/cm-u-bk-ccpr/CcprHisNew?startDate=2023-05-18&endDate=2023-06-01&currency=SAR%2FCNY&pageNum=1&pageSize=30",
+      "2023-07-01: 403 Client Error: Forbidden for url: https://www.chinamoney.com.cn/ags/ms/cm-u-bk-ccpr/CcprHisNew?startDate=2023-06-17&endDate=2023-07-01&currency=SAR%2FCNY&pageNum=1&pageSize=30",
+      "2023-08-01: 403 Client Error: Forbidden for url: https://www.chinamoney.com.cn/ags/ms/cm-u-bk-ccpr/CcprHisNew?startDate=2023-07-18&endDate=2023-08-01&currency=SAR%2FCNY&pageNum=1&pageSize=30"
     ],
     "SEK": [
-      "2023-01-01: no record",
-      "2023-02-01: no record",
-      "2023-03-01: no record",
-      "2023-04-01: no record",
-      "2023-05-01: no record",
-      "2023-06-01: no record",
-      "2023-07-01: no record",
-      "2023-08-01: no record"
+      "2023-01-01: 403 Client Error: Forbidden for url: https://www.chinamoney.com.cn/ags/ms/cm-u-bk-ccpr/CcprHisNew?startDate=2022-12-18&endDate=2023-01-01&currency=SEK%2FCNY&pageNum=1&pageSize=30",
+      "2023-02-01: 403 Client Error: Forbidden for url: https://www.chinamoney.com.cn/ags/ms/cm-u-bk-ccpr/CcprHisNew?startDate=2023-01-18&endDate=2023-02-01&currency=SEK%2FCNY&pageNum=1&pageSize=30",
+      "2023-03-01: 403 Client Error: Forbidden for url: https://www.chinamoney.com.cn/ags/ms/cm-u-bk-ccpr/CcprHisNew?startDate=2023-02-15&endDate=2023-03-01&currency=SEK%2FCNY&pageNum=1&pageSize=30",
+      "2023-04-01: 403 Client Error: Forbidden for url: https://www.chinamoney.com.cn/ags/ms/cm-u-bk-ccpr/CcprHisNew?startDate=2023-03-18&endDate=2023-04-01&currency=SEK%2FCNY&pageNum=1&pageSize=30",
+      "2023-05-01: 403 Client Error: Forbidden for url: https://www.chinamoney.com.cn/ags/ms/cm-u-bk-ccpr/CcprHisNew?startDate=2023-04-17&endDate=2023-05-01&currency=SEK%2FCNY&pageNum=1&pageSize=30",
+      "2023-06-01: 403 Client Error: Forbidden for url: https://www.chinamoney.com.cn/ags/ms/cm-u-bk-ccpr/CcprHisNew?startDate=2023-05-18&endDate=2023-06-01&currency=SEK%2FCNY&pageNum=1&pageSize=30",
+      "2023-07-01: 403 Client Error: Forbidden for url: https://www.chinamoney.com.cn/ags/ms/cm-u-bk-ccpr/CcprHisNew?startDate=2023-06-17&endDate=2023-07-01&currency=SEK%2FCNY&pageNum=1&pageSize=30",
+      "2023-08-01: 403 Client Error: Forbidden for url: https://www.chinamoney.com.cn/ags/ms/cm-u-bk-ccpr/CcprHisNew?startDate=2023-07-18&endDate=2023-08-01&currency=SEK%2FCNY&pageNum=1&pageSize=30"
+    ],
+    "SGD": [
+      "2023-01-01: 403 Client Error: Forbidden for url: https://www.chinamoney.com.cn/ags/ms/cm-u-bk-ccpr/CcprHisNew?startDate=2022-12-18&endDate=2023-01-01&currency=SGD%2FCNY&pageNum=1&pageSize=30",
+      "2023-02-01: 403 Client Error: Forbidden for url: https://www.chinamoney.com.cn/ags/ms/cm-u-bk-ccpr/CcprHisNew?startDate=2023-01-18&endDate=2023-02-01&currency=SGD%2FCNY&pageNum=1&pageSize=30",
+      "2023-03-01: 403 Client Error: Forbidden for url: https://www.chinamoney.com.cn/ags/ms/cm-u-bk-ccpr/CcprHisNew?startDate=2023-02-15&endDate=2023-03-01&currency=SGD%2FCNY&pageNum=1&pageSize=30",
+      "2023-04-01: 403 Client Error: Forbidden for url: https://www.chinamoney.com.cn/ags/ms/cm-u-bk-ccpr/CcprHisNew?startDate=2023-03-18&endDate=2023-04-01&currency=SGD%2FCNY&pageNum=1&pageSize=30",
+      "2023-05-01: 403 Client Error: Forbidden for url: https://www.chinamoney.com.cn/ags/ms/cm-u-bk-ccpr/CcprHisNew?startDate=2023-04-17&endDate=2023-05-01&currency=SGD%2FCNY&pageNum=1&pageSize=30",
+      "2023-06-01: 403 Client Error: Forbidden for url: https://www.chinamoney.com.cn/ags/ms/cm-u-bk-ccpr/CcprHisNew?startDate=2023-05-18&endDate=2023-06-01&currency=SGD%2FCNY&pageNum=1&pageSize=30",
+      "2023-07-01: 403 Client Error: Forbidden for url: https://www.chinamoney.com.cn/ags/ms/cm-u-bk-ccpr/CcprHisNew?startDate=2023-06-17&endDate=2023-07-01&currency=SGD%2FCNY&pageNum=1&pageSize=30",
+      "2023-08-01: 403 Client Error: Forbidden for url: https://www.chinamoney.com.cn/ags/ms/cm-u-bk-ccpr/CcprHisNew?startDate=2023-07-18&endDate=2023-08-01&currency=SGD%2FCNY&pageNum=1&pageSize=30"
     ],
     "THB": [
-      "2023-01-01: no record",
-      "2023-02-01: no record",
-      "2023-03-01: no record",
-      "2023-04-01: no record",
-      "2023-05-01: no record",
-      "2023-06-01: no record",
-      "2023-07-01: no record",
-      "2023-08-01: no record"
+      "2023-01-01: 403 Client Error: Forbidden for url: https://www.chinamoney.com.cn/ags/ms/cm-u-bk-ccpr/CcprHisNew?startDate=2022-12-18&endDate=2023-01-01&currency=THB%2FCNY&pageNum=1&pageSize=30",
+      "2023-02-01: 403 Client Error: Forbidden for url: https://www.chinamoney.com.cn/ags/ms/cm-u-bk-ccpr/CcprHisNew?startDate=2023-01-18&endDate=2023-02-01&currency=THB%2FCNY&pageNum=1&pageSize=30",
+      "2023-03-01: 403 Client Error: Forbidden for url: https://www.chinamoney.com.cn/ags/ms/cm-u-bk-ccpr/CcprHisNew?startDate=2023-02-15&endDate=2023-03-01&currency=THB%2FCNY&pageNum=1&pageSize=30",
+      "2023-04-01: 403 Client Error: Forbidden for url: https://www.chinamoney.com.cn/ags/ms/cm-u-bk-ccpr/CcprHisNew?startDate=2023-03-18&endDate=2023-04-01&currency=THB%2FCNY&pageNum=1&pageSize=30",
+      "2023-05-01: 403 Client Error: Forbidden for url: https://www.chinamoney.com.cn/ags/ms/cm-u-bk-ccpr/CcprHisNew?startDate=2023-04-17&endDate=2023-05-01&currency=THB%2FCNY&pageNum=1&pageSize=30",
+      "2023-06-01: 403 Client Error: Forbidden for url: https://www.chinamoney.com.cn/ags/ms/cm-u-bk-ccpr/CcprHisNew?startDate=2023-05-18&endDate=2023-06-01&currency=THB%2FCNY&pageNum=1&pageSize=30",
+      "2023-07-01: 403 Client Error: Forbidden for url: https://www.chinamoney.com.cn/ags/ms/cm-u-bk-ccpr/CcprHisNew?startDate=2023-06-17&endDate=2023-07-01&currency=THB%2FCNY&pageNum=1&pageSize=30",
+      "2023-08-01: 403 Client Error: Forbidden for url: https://www.chinamoney.com.cn/ags/ms/cm-u-bk-ccpr/CcprHisNew?startDate=2023-07-18&endDate=2023-08-01&currency=THB%2FCNY&pageNum=1&pageSize=30"
     ],
     "TRY": [
-      "2023-01-01: no record",
-      "2023-02-01: no record",
-      "2023-03-01: no record",
-      "2023-04-01: no record",
-      "2023-05-01: no record",
-      "2023-06-01: no record",
-      "2023-07-01: no record",
-      "2023-08-01: no record"
+      "2023-01-01: 403 Client Error: Forbidden for url: https://www.chinamoney.com.cn/ags/ms/cm-u-bk-ccpr/CcprHisNew?startDate=2022-12-18&endDate=2023-01-01&currency=TRY%2FCNY&pageNum=1&pageSize=30",
+      "2023-02-01: 403 Client Error: Forbidden for url: https://www.chinamoney.com.cn/ags/ms/cm-u-bk-ccpr/CcprHisNew?startDate=2023-01-18&endDate=2023-02-01&currency=TRY%2FCNY&pageNum=1&pageSize=30",
+      "2023-03-01: 403 Client Error: Forbidden for url: https://www.chinamoney.com.cn/ags/ms/cm-u-bk-ccpr/CcprHisNew?startDate=2023-02-15&endDate=2023-03-01&currency=TRY%2FCNY&pageNum=1&pageSize=30",
+      "2023-04-01: 403 Client Error: Forbidden for url: https://www.chinamoney.com.cn/ags/ms/cm-u-bk-ccpr/CcprHisNew?startDate=2023-03-18&endDate=2023-04-01&currency=TRY%2FCNY&pageNum=1&pageSize=30",
+      "2023-05-01: 403 Client Error: Forbidden for url: https://www.chinamoney.com.cn/ags/ms/cm-u-bk-ccpr/CcprHisNew?startDate=2023-04-17&endDate=2023-05-01&currency=TRY%2FCNY&pageNum=1&pageSize=30",
+      "2023-06-01: 403 Client Error: Forbidden for url: https://www.chinamoney.com.cn/ags/ms/cm-u-bk-ccpr/CcprHisNew?startDate=2023-05-18&endDate=2023-06-01&currency=TRY%2FCNY&pageNum=1&pageSize=30",
+      "2023-07-01: 403 Client Error: Forbidden for url: https://www.chinamoney.com.cn/ags/ms/cm-u-bk-ccpr/CcprHisNew?startDate=2023-06-17&endDate=2023-07-01&currency=TRY%2FCNY&pageNum=1&pageSize=30",
+      "2023-08-01: 403 Client Error: Forbidden for url: https://www.chinamoney.com.cn/ags/ms/cm-u-bk-ccpr/CcprHisNew?startDate=2023-07-18&endDate=2023-08-01&currency=TRY%2FCNY&pageNum=1&pageSize=30"
+    ],
+    "USD": [
+      "2023-01-01: 403 Client Error: Forbidden for url: https://www.chinamoney.com.cn/ags/ms/cm-u-bk-ccpr/CcprHisNew?startDate=2022-12-18&endDate=2023-01-01&currency=USD%2FCNY&pageNum=1&pageSize=30",
+      "2023-02-01: 403 Client Error: Forbidden for url: https://www.chinamoney.com.cn/ags/ms/cm-u-bk-ccpr/CcprHisNew?startDate=2023-01-18&endDate=2023-02-01&currency=USD%2FCNY&pageNum=1&pageSize=30",
+      "2023-03-01: 403 Client Error: Forbidden for url: https://www.chinamoney.com.cn/ags/ms/cm-u-bk-ccpr/CcprHisNew?startDate=2023-02-15&endDate=2023-03-01&currency=USD%2FCNY&pageNum=1&pageSize=30",
+      "2023-04-01: 403 Client Error: Forbidden for url: https://www.chinamoney.com.cn/ags/ms/cm-u-bk-ccpr/CcprHisNew?startDate=2023-03-18&endDate=2023-04-01&currency=USD%2FCNY&pageNum=1&pageSize=30",
+      "2023-05-01: 403 Client Error: Forbidden for url: https://www.chinamoney.com.cn/ags/ms/cm-u-bk-ccpr/CcprHisNew?startDate=2023-04-17&endDate=2023-05-01&currency=USD%2FCNY&pageNum=1&pageSize=30",
+      "2023-06-01: 403 Client Error: Forbidden for url: https://www.chinamoney.com.cn/ags/ms/cm-u-bk-ccpr/CcprHisNew?startDate=2023-05-18&endDate=2023-06-01&currency=USD%2FCNY&pageNum=1&pageSize=30",
+      "2023-07-01: 403 Client Error: Forbidden for url: https://www.chinamoney.com.cn/ags/ms/cm-u-bk-ccpr/CcprHisNew?startDate=2023-06-17&endDate=2023-07-01&currency=USD%2FCNY&pageNum=1&pageSize=30",
+      "2023-08-01: 403 Client Error: Forbidden for url: https://www.chinamoney.com.cn/ags/ms/cm-u-bk-ccpr/CcprHisNew?startDate=2023-07-18&endDate=2023-08-01&currency=USD%2FCNY&pageNum=1&pageSize=30"
     ],
     "ZAR": [
-      "2023-01-01: no record",
-      "2023-02-01: no record",
-      "2023-03-01: no record",
-      "2023-04-01: no record",
-      "2023-05-01: no record",
-      "2023-06-01: no record",
-      "2023-07-01: no record",
-      "2023-08-01: no record"
+      "2023-01-01: 403 Client Error: Forbidden for url: https://www.chinamoney.com.cn/ags/ms/cm-u-bk-ccpr/CcprHisNew?startDate=2022-12-18&endDate=2023-01-01&currency=ZAR%2FCNY&pageNum=1&pageSize=30",
+      "2023-02-01: 403 Client Error: Forbidden for url: https://www.chinamoney.com.cn/ags/ms/cm-u-bk-ccpr/CcprHisNew?startDate=2023-01-18&endDate=2023-02-01&currency=ZAR%2FCNY&pageNum=1&pageSize=30",
+      "2023-03-01: 403 Client Error: Forbidden for url: https://www.chinamoney.com.cn/ags/ms/cm-u-bk-ccpr/CcprHisNew?startDate=2023-02-15&endDate=2023-03-01&currency=ZAR%2FCNY&pageNum=1&pageSize=30",
+      "2023-04-01: 403 Client Error: Forbidden for url: https://www.chinamoney.com.cn/ags/ms/cm-u-bk-ccpr/CcprHisNew?startDate=2023-03-18&endDate=2023-04-01&currency=ZAR%2FCNY&pageNum=1&pageSize=30",
+      "2023-05-01: 403 Client Error: Forbidden for url: https://www.chinamoney.com.cn/ags/ms/cm-u-bk-ccpr/CcprHisNew?startDate=2023-04-17&endDate=2023-05-01&currency=ZAR%2FCNY&pageNum=1&pageSize=30",
+      "2023-06-01: 403 Client Error: Forbidden for url: https://www.chinamoney.com.cn/ags/ms/cm-u-bk-ccpr/CcprHisNew?startDate=2023-05-18&endDate=2023-06-01&currency=ZAR%2FCNY&pageNum=1&pageSize=30",
+      "2023-07-01: 403 Client Error: Forbidden for url: https://www.chinamoney.com.cn/ags/ms/cm-u-bk-ccpr/CcprHisNew?startDate=2023-06-17&endDate=2023-07-01&currency=ZAR%2FCNY&pageNum=1&pageSize=30",
+      "2023-08-01: 403 Client Error: Forbidden for url: https://www.chinamoney.com.cn/ags/ms/cm-u-bk-ccpr/CcprHisNew?startDate=2023-07-18&endDate=2023-08-01&currency=ZAR%2FCNY&pageNum=1&pageSize=30"
     ]
   },
   "rates": {
     "AED": {},
-    "AUD": {
-      "2023-01-01": {
-        "pair": "AUD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 4.7138,
-        "source_date": "2022-12-30"
-      },
-      "2023-02-01": {
-        "pair": "AUD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 4.7593,
-        "source_date": "2023-02-01"
-      },
-      "2023-03-01": {
-        "pair": "AUD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 4.6702,
-        "source_date": "2023-03-01"
-      },
-      "2023-04-01": {
-        "pair": "AUD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 4.6131,
-        "source_date": "2023-03-31"
-      },
-      "2023-05-01": {
-        "pair": "AUD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 4.5894,
-        "source_date": "2023-04-28"
-      },
-      "2023-06-01": {
-        "pair": "AUD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 4.618,
-        "source_date": "2023-06-01"
-      },
-      "2023-07-01": {
-        "pair": "AUD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 4.7992,
-        "source_date": "2023-06-30"
-      },
-      "2023-08-01": {
-        "pair": "AUD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 4.8016,
-        "source_date": "2023-08-01"
-      },
-      "2023-09-01": {
-        "pair": "AUD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 4.7224,
-        "source_date": "2023-09-01"
-      },
-      "2023-10-01": {
-        "pair": "AUD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 4.5934,
-        "source_date": "2023-09-28"
-      },
-      "2023-11-01": {
-        "pair": "AUD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 4.5884,
-        "source_date": "2023-11-01"
-      },
-      "2023-12-01": {
-        "pair": "AUD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 4.7096,
-        "source_date": "2023-12-01"
-      },
-      "2024-01-01": {
-        "pair": "AUD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 4.8484,
-        "source_date": "2023-12-29"
-      },
-      "2024-02-01": {
-        "pair": "AUD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 4.681,
-        "source_date": "2024-02-01"
-      },
-      "2024-03-01": {
-        "pair": "AUD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 4.6358,
-        "source_date": "2024-03-01"
-      },
-      "2024-04-01": {
-        "pair": "AUD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 4.6597,
-        "source_date": "2024-04-01"
-      },
-      "2024-05-01": {
-        "pair": "AUD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 4.6905,
-        "source_date": "2024-04-30"
-      },
-      "2024-06-01": {
-        "pair": "AUD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 4.7402,
-        "source_date": "2024-05-31"
-      },
-      "2024-07-01": {
-        "pair": "AUD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 4.7768,
-        "source_date": "2024-07-01"
-      },
-      "2024-08-01": {
-        "pair": "AUD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 4.6796,
-        "source_date": "2024-08-01"
-      },
-      "2024-09-01": {
-        "pair": "AUD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 4.8345,
-        "source_date": "2024-08-30"
-      },
-      "2024-10-01": {
-        "pair": "AUD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 4.8471,
-        "source_date": "2024-09-30"
-      },
-      "2024-11-01": {
-        "pair": "AUD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 4.6808,
-        "source_date": "2024-11-01"
-      },
-      "2024-12-01": {
-        "pair": "AUD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 4.6908,
-        "source_date": "2024-11-29"
-      },
-      "2025-01-01": {
-        "pair": "AUD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 4.507,
-        "source_date": "2024-12-31"
-      },
-      "2025-02-01": {
-        "pair": "AUD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 4.5307,
-        "source_date": "2025-01-27"
-      },
-      "2025-03-01": {
-        "pair": "AUD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 4.5101,
-        "source_date": "2025-02-28"
-      },
-      "2025-04-01": {
-        "pair": "AUD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 4.5016,
-        "source_date": "2025-04-01"
-      },
-      "2025-05-01": {
-        "pair": "AUD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 4.6177,
-        "source_date": "2025-04-30"
-      },
-      "2025-06-01": {
-        "pair": "AUD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 4.6224,
-        "source_date": "2025-05-30"
-      },
-      "2025-07-01": {
-        "pair": "AUD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 4.7036,
-        "source_date": "2025-07-01"
-      },
-      "2025-08-01": {
-        "pair": "AUD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 4.6121,
-        "source_date": "2025-08-01"
-      },
-      "2025-09-01": {
-        "pair": "AUD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 4.6542,
-        "source_date": "2025-09-01"
-      },
-      "2025-10-01": {
-        "pair": "AUD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 4.6761,
-        "source_date": "2025-09-30"
-      },
-      "2025-11-01": {
-        "pair": "AUD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 4.6561,
-        "source_date": "2025-10-31"
-      },
-      "2025-12-01": {
-        "pair": "AUD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 4.6302,
-        "source_date": "2025-12-01"
-      },
-      "2026-01-01": {
-        "pair": "AUD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 4.6892,
-        "source_date": "2025-12-31"
-      },
-      "2026-02-01": {
-        "pair": "AUD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 4.9019,
-        "source_date": "2026-01-30"
-      },
-      "2026-03-01": {
-        "pair": "AUD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 4.8776,
-        "source_date": "2026-02-27"
-      },
-      "2026-04-01": {
-        "pair": "AUD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 4.7649,
-        "source_date": "2026-04-01"
-      },
-      "2026-05-01": {
-        "pair": "AUD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 4.8824,
-        "source_date": "2026-04-30"
-      },
-      "2026-06-01": {
-        "pair": "AUD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 4.8759,
-        "source_date": "2026-06-01"
-      },
-      "2026-07-01": {
-        "pair": "AUD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 4.6804,
-        "source_date": "2026-06-30"
-      }
-    },
-    "CAD": {
-      "2023-01-01": {
-        "pair": "CAD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 5.1385,
-        "source_date": "2022-12-30"
-      },
-      "2023-02-01": {
-        "pair": "CAD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 5.0729,
-        "source_date": "2023-02-01"
-      },
-      "2023-03-01": {
-        "pair": "CAD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 5.0865,
-        "source_date": "2023-03-01"
-      },
-      "2023-04-01": {
-        "pair": "CAD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 5.0824,
-        "source_date": "2023-03-31"
-      },
-      "2023-05-01": {
-        "pair": "CAD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 5.0893,
-        "source_date": "2023-04-28"
-      },
-      "2023-06-01": {
-        "pair": "CAD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 5.2316,
-        "source_date": "2023-06-01"
-      },
-      "2023-07-01": {
-        "pair": "CAD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 5.4721,
-        "source_date": "2023-06-30"
-      },
-      "2023-08-01": {
-        "pair": "CAD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 5.4189,
-        "source_date": "2023-08-01"
-      },
-      "2023-09-01": {
-        "pair": "CAD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 5.3977,
-        "source_date": "2023-09-01"
-      },
-      "2023-10-01": {
-        "pair": "CAD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 5.3558,
-        "source_date": "2023-09-28"
-      },
-      "2023-11-01": {
-        "pair": "CAD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 5.2143,
-        "source_date": "2023-11-01"
-      },
-      "2023-12-01": {
-        "pair": "CAD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 5.2558,
-        "source_date": "2023-12-01"
-      },
-      "2024-01-01": {
-        "pair": "CAD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 5.3673,
-        "source_date": "2023-12-29"
-      },
-      "2024-02-01": {
-        "pair": "CAD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 5.3079,
-        "source_date": "2024-02-01"
-      },
-      "2024-03-01": {
-        "pair": "CAD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 5.2531,
-        "source_date": "2024-03-01"
-      },
-      "2024-04-01": {
-        "pair": "CAD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 5.2726,
-        "source_date": "2024-04-01"
-      },
-      "2024-05-01": {
-        "pair": "CAD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 5.2255,
-        "source_date": "2024-04-30"
-      },
-      "2024-06-01": {
-        "pair": "CAD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 5.2224,
-        "source_date": "2024-05-31"
-      },
-      "2024-07-01": {
-        "pair": "CAD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 5.2336,
-        "source_date": "2024-07-01"
-      },
-      "2024-08-01": {
-        "pair": "CAD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 5.177,
-        "source_date": "2024-08-01"
-      },
-      "2024-09-01": {
-        "pair": "CAD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 5.2732,
-        "source_date": "2024-08-30"
-      },
-      "2024-10-01": {
-        "pair": "CAD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 5.1868,
-        "source_date": "2024-09-30"
-      },
-      "2024-11-01": {
-        "pair": "CAD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 5.1071,
-        "source_date": "2024-11-01"
-      },
-      "2024-12-01": {
-        "pair": "CAD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 5.1475,
-        "source_date": "2024-11-29"
-      },
-      "2025-01-01": {
-        "pair": "CAD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 5.0498,
-        "source_date": "2024-12-31"
-      },
-      "2025-02-01": {
-        "pair": "CAD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 5.0051,
-        "source_date": "2025-01-27"
-      },
-      "2025-03-01": {
-        "pair": "CAD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 5.0079,
-        "source_date": "2025-02-28"
-      },
-      "2025-04-01": {
-        "pair": "CAD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 5.0097,
-        "source_date": "2025-04-01"
-      },
-      "2025-05-01": {
-        "pair": "CAD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 5.2298,
-        "source_date": "2025-04-30"
-      },
-      "2025-06-01": {
-        "pair": "CAD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 5.1959,
-        "source_date": "2025-05-30"
-      },
-      "2025-07-01": {
-        "pair": "CAD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 5.2557,
-        "source_date": "2025-07-01"
-      },
-      "2025-08-01": {
-        "pair": "CAD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 5.1757,
-        "source_date": "2025-08-01"
-      },
-      "2025-09-01": {
-        "pair": "CAD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 5.1774,
-        "source_date": "2025-09-01"
-      },
-      "2025-10-01": {
-        "pair": "CAD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 5.1094,
-        "source_date": "2025-09-30"
-      },
-      "2025-11-01": {
-        "pair": "CAD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 5.079,
-        "source_date": "2025-10-31"
-      },
-      "2025-12-01": {
-        "pair": "CAD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 5.0621,
-        "source_date": "2025-12-01"
-      },
-      "2026-01-01": {
-        "pair": "CAD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 5.1142,
-        "source_date": "2025-12-31"
-      },
-      "2026-02-01": {
-        "pair": "CAD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 5.1577,
-        "source_date": "2026-01-30"
-      },
-      "2026-03-01": {
-        "pair": "CAD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 5.0266,
-        "source_date": "2026-02-27"
-      },
-      "2026-04-01": {
-        "pair": "CAD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 4.9582,
-        "source_date": "2026-04-01"
-      },
-      "2026-05-01": {
-        "pair": "CAD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 5.0085,
-        "source_date": "2026-04-30"
-      },
-      "2026-06-01": {
-        "pair": "CAD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 4.9188,
-        "source_date": "2026-06-01"
-      },
-      "2026-07-01": {
-        "pair": "CAD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 4.7847,
-        "source_date": "2026-06-30"
-      }
-    },
-    "CHF": {
-      "2023-01-01": {
-        "pair": "CHF/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 7.5432,
-        "source_date": "2022-12-30"
-      },
-      "2023-02-01": {
-        "pair": "CHF/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 7.3667,
-        "source_date": "2023-02-01"
-      },
-      "2023-03-01": {
-        "pair": "CHF/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 7.3681,
-        "source_date": "2023-03-01"
-      },
-      "2023-04-01": {
-        "pair": "CHF/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 7.5237,
-        "source_date": "2023-03-31"
-      },
-      "2023-05-01": {
-        "pair": "CHF/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 7.7452,
-        "source_date": "2023-04-28"
-      },
-      "2023-06-01": {
-        "pair": "CHF/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 7.7975,
-        "source_date": "2023-06-01"
-      },
-      "2023-07-01": {
-        "pair": "CHF/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 8.0614,
-        "source_date": "2023-06-30"
-      },
-      "2023-08-01": {
-        "pair": "CHF/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 8.1965,
-        "source_date": "2023-08-01"
-      },
-      "2023-09-01": {
-        "pair": "CHF/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 8.2266,
-        "source_date": "2023-09-01"
-      },
-      "2023-10-01": {
-        "pair": "CHF/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 7.8454,
-        "source_date": "2023-09-28"
-      },
-      "2023-11-01": {
-        "pair": "CHF/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 7.9447,
-        "source_date": "2023-11-01"
-      },
-      "2023-12-01": {
-        "pair": "CHF/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 8.1481,
-        "source_date": "2023-12-01"
-      },
-      "2024-01-01": {
-        "pair": "CHF/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 8.4184,
-        "source_date": "2023-12-29"
-      },
-      "2024-02-01": {
-        "pair": "CHF/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 8.2689,
-        "source_date": "2024-02-01"
-      },
-      "2024-03-01": {
-        "pair": "CHF/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 8.0574,
-        "source_date": "2024-03-01"
-      },
-      "2024-04-01": {
-        "pair": "CHF/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 7.8982,
-        "source_date": "2024-04-01"
-      },
-      "2024-05-01": {
-        "pair": "CHF/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 7.8319,
-        "source_date": "2024-04-30"
-      },
-      "2024-06-01": {
-        "pair": "CHF/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 7.9016,
-        "source_date": "2024-05-31"
-      },
-      "2024-07-01": {
-        "pair": "CHF/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 7.9344,
-        "source_date": "2024-07-01"
-      },
-      "2024-08-01": {
-        "pair": "CHF/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 8.1243,
-        "source_date": "2024-08-01"
-      },
-      "2024-09-01": {
-        "pair": "CHF/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 8.3943,
-        "source_date": "2024-08-30"
-      },
-      "2024-10-01": {
-        "pair": "CHF/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 8.3318,
-        "source_date": "2024-09-30"
-      },
-      "2024-11-01": {
-        "pair": "CHF/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 8.2374,
-        "source_date": "2024-11-01"
-      },
-      "2024-12-01": {
-        "pair": "CHF/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 8.162,
-        "source_date": "2024-11-29"
-      },
-      "2025-01-01": {
-        "pair": "CHF/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 7.9977,
-        "source_date": "2024-12-31"
-      },
-      "2025-02-01": {
-        "pair": "CHF/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 7.9237,
-        "source_date": "2025-01-27"
-      },
-      "2025-03-01": {
-        "pair": "CHF/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 8.0191,
-        "source_date": "2025-02-28"
-      },
-      "2025-04-01": {
-        "pair": "CHF/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 8.1417,
-        "source_date": "2025-04-01"
-      },
-      "2025-05-01": {
-        "pair": "CHF/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 8.764,
-        "source_date": "2025-04-30"
-      },
-      "2025-06-01": {
-        "pair": "CHF/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 8.7243,
-        "source_date": "2025-05-30"
-      },
-      "2025-07-01": {
-        "pair": "CHF/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 9.0181,
-        "source_date": "2025-07-01"
-      },
-      "2025-08-01": {
-        "pair": "CHF/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 8.8134,
-        "source_date": "2025-08-01"
-      },
-      "2025-09-01": {
-        "pair": "CHF/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 8.8782,
-        "source_date": "2025-09-01"
-      },
-      "2025-10-01": {
-        "pair": "CHF/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 8.9132,
-        "source_date": "2025-09-30"
-      },
-      "2025-11-01": {
-        "pair": "CHF/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 8.8561,
-        "source_date": "2025-10-31"
-      },
-      "2025-12-01": {
-        "pair": "CHF/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 8.8013,
-        "source_date": "2025-12-01"
-      },
-      "2026-01-01": {
-        "pair": "CHF/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 8.851,
-        "source_date": "2025-12-31"
-      },
-      "2026-02-01": {
-        "pair": "CHF/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 9.1047,
-        "source_date": "2026-01-30"
-      },
-      "2026-03-01": {
-        "pair": "CHF/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 8.8912,
-        "source_date": "2026-02-27"
-      },
-      "2026-04-01": {
-        "pair": "CHF/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 8.639,
-        "source_date": "2026-04-01"
-      },
-      "2026-05-01": {
-        "pair": "CHF/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 8.6659,
-        "source_date": "2026-04-30"
-      },
-      "2026-06-01": {
-        "pair": "CHF/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 8.6922,
-        "source_date": "2026-06-01"
-      },
-      "2026-07-01": {
-        "pair": "CHF/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 8.4228,
-        "source_date": "2026-06-30"
-      }
-    },
+    "AUD": {},
+    "CAD": {},
+    "CHF": {},
     "CNY": {
       "2023-01-01": {
         "pair": "CNY/CNY",
@@ -1241,789 +554,18 @@
         "quote_unit_adjusted": "1",
         "rate": 1.0,
         "source_date": "2026-09-01"
+      },
+      "2026-10-01": {
+        "pair": "CNY/CNY",
+        "quote_unit_adjusted": "1",
+        "rate": 1.0,
+        "source_date": "2026-10-01"
       }
     },
     "DKK": {},
-    "EUR": {
-      "2023-01-01": {
-        "pair": "EUR/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 7.4229,
-        "source_date": "2022-12-30"
-      },
-      "2023-02-01": {
-        "pair": "EUR/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 7.3318,
-        "source_date": "2023-02-01"
-      },
-      "2023-03-01": {
-        "pair": "EUR/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 7.3416,
-        "source_date": "2023-03-01"
-      },
-      "2023-04-01": {
-        "pair": "EUR/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 7.4945,
-        "source_date": "2023-03-31"
-      },
-      "2023-05-01": {
-        "pair": "EUR/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 7.6361,
-        "source_date": "2023-04-28"
-      },
-      "2023-06-01": {
-        "pair": "EUR/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 7.5887,
-        "source_date": "2023-06-01"
-      },
-      "2023-07-01": {
-        "pair": "EUR/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 7.8771,
-        "source_date": "2023-06-30"
-      },
-      "2023-08-01": {
-        "pair": "EUR/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 7.8579,
-        "source_date": "2023-08-01"
-      },
-      "2023-09-01": {
-        "pair": "EUR/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 7.8815,
-        "source_date": "2023-09-01"
-      },
-      "2023-10-01": {
-        "pair": "EUR/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 7.5849,
-        "source_date": "2023-09-28"
-      },
-      "2023-11-01": {
-        "pair": "EUR/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 7.6399,
-        "source_date": "2023-11-01"
-      },
-      "2023-12-01": {
-        "pair": "EUR/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 7.7586,
-        "source_date": "2023-12-01"
-      },
-      "2024-01-01": {
-        "pair": "EUR/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 7.8592,
-        "source_date": "2023-12-29"
-      },
-      "2024-02-01": {
-        "pair": "EUR/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 7.6953,
-        "source_date": "2024-02-01"
-      },
-      "2024-03-01": {
-        "pair": "EUR/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 7.7017,
-        "source_date": "2024-03-01"
-      },
-      "2024-04-01": {
-        "pair": "EUR/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 7.6889,
-        "source_date": "2024-04-01"
-      },
-      "2024-05-01": {
-        "pair": "EUR/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 7.6458,
-        "source_date": "2024-04-30"
-      },
-      "2024-06-01": {
-        "pair": "EUR/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 7.7322,
-        "source_date": "2024-05-31"
-      },
-      "2024-07-01": {
-        "pair": "EUR/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 7.6787,
-        "source_date": "2024-07-01"
-      },
-      "2024-08-01": {
-        "pair": "EUR/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 7.7359,
-        "source_date": "2024-08-01"
-      },
-      "2024-09-01": {
-        "pair": "EUR/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 7.8807,
-        "source_date": "2024-08-30"
-      },
-      "2024-10-01": {
-        "pair": "EUR/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 7.8267,
-        "source_date": "2024-09-30"
-      },
-      "2024-11-01": {
-        "pair": "EUR/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 7.7421,
-        "source_date": "2024-11-01"
-      },
-      "2024-12-01": {
-        "pair": "EUR/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 7.6087,
-        "source_date": "2024-11-29"
-      },
-      "2025-01-01": {
-        "pair": "EUR/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 7.5257,
-        "source_date": "2024-12-31"
-      },
-      "2025-02-01": {
-        "pair": "EUR/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 7.5301,
-        "source_date": "2025-01-27"
-      },
-      "2025-03-01": {
-        "pair": "EUR/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 7.5045,
-        "source_date": "2025-02-28"
-      },
-      "2025-04-01": {
-        "pair": "EUR/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 7.7913,
-        "source_date": "2025-04-01"
-      },
-      "2025-05-01": {
-        "pair": "EUR/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 8.225,
-        "source_date": "2025-04-30"
-      },
-      "2025-06-01": {
-        "pair": "EUR/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 8.162,
-        "source_date": "2025-05-30"
-      },
-      "2025-07-01": {
-        "pair": "EUR/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 8.4305,
-        "source_date": "2025-07-01"
-      },
-      "2025-08-01": {
-        "pair": "EUR/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 8.1885,
-        "source_date": "2025-08-01"
-      },
-      "2025-09-01": {
-        "pair": "EUR/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 8.3129,
-        "source_date": "2025-09-01"
-      },
-      "2025-10-01": {
-        "pair": "EUR/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 8.3351,
-        "source_date": "2025-09-30"
-      },
-      "2025-11-01": {
-        "pair": "EUR/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 8.2138,
-        "source_date": "2025-10-31"
-      },
-      "2025-12-01": {
-        "pair": "EUR/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 8.2052,
-        "source_date": "2025-12-01"
-      },
-      "2026-01-01": {
-        "pair": "EUR/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 8.2355,
-        "source_date": "2025-12-31"
-      },
-      "2026-02-01": {
-        "pair": "EUR/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 8.3244,
-        "source_date": "2026-01-30"
-      },
-      "2026-03-01": {
-        "pair": "EUR/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 8.1208,
-        "source_date": "2026-02-27"
-      },
-      "2026-04-01": {
-        "pair": "EUR/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 7.9806,
-        "source_date": "2026-04-01"
-      },
-      "2026-05-01": {
-        "pair": "EUR/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 8.0057,
-        "source_date": "2026-04-30"
-      },
-      "2026-06-01": {
-        "pair": "EUR/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 7.9122,
-        "source_date": "2026-06-01"
-      },
-      "2026-07-01": {
-        "pair": "EUR/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 7.7671,
-        "source_date": "2026-06-30"
-      }
-    },
-    "GBP": {
-      "2023-01-01": {
-        "pair": "GBP/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 8.3941,
-        "source_date": "2022-12-30"
-      },
-      "2023-02-01": {
-        "pair": "GBP/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 8.3094,
-        "source_date": "2023-02-01"
-      },
-      "2023-03-01": {
-        "pair": "GBP/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 8.3513,
-        "source_date": "2023-03-01"
-      },
-      "2023-04-01": {
-        "pair": "GBP/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 8.5127,
-        "source_date": "2023-03-31"
-      },
-      "2023-05-01": {
-        "pair": "GBP/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 8.6504,
-        "source_date": "2023-04-28"
-      },
-      "2023-06-01": {
-        "pair": "GBP/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 8.8326,
-        "source_date": "2023-06-01"
-      },
-      "2023-07-01": {
-        "pair": "GBP/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 9.1432,
-        "source_date": "2023-06-30"
-      },
-      "2023-08-01": {
-        "pair": "GBP/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 9.1706,
-        "source_date": "2023-08-01"
-      },
-      "2023-09-01": {
-        "pair": "GBP/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 9.2125,
-        "source_date": "2023-09-01"
-      },
-      "2023-10-01": {
-        "pair": "GBP/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 8.7667,
-        "source_date": "2023-09-28"
-      },
-      "2023-11-01": {
-        "pair": "GBP/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 8.7814,
-        "source_date": "2023-11-01"
-      },
-      "2023-12-01": {
-        "pair": "GBP/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 8.9996,
-        "source_date": "2023-12-01"
-      },
-      "2024-01-01": {
-        "pair": "GBP/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 9.0411,
-        "source_date": "2023-12-29"
-      },
-      "2024-02-01": {
-        "pair": "GBP/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 9.0394,
-        "source_date": "2024-02-01"
-      },
-      "2024-03-01": {
-        "pair": "GBP/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 8.997,
-        "source_date": "2024-03-01"
-      },
-      "2024-04-01": {
-        "pair": "GBP/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 8.9989,
-        "source_date": "2024-04-01"
-      },
-      "2024-05-01": {
-        "pair": "GBP/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 8.9594,
-        "source_date": "2024-04-30"
-      },
-      "2024-06-01": {
-        "pair": "GBP/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 9.0853,
-        "source_date": "2024-05-31"
-      },
-      "2024-07-01": {
-        "pair": "GBP/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 9.0427,
-        "source_date": "2024-07-01"
-      },
-      "2024-08-01": {
-        "pair": "GBP/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 9.1809,
-        "source_date": "2024-08-01"
-      },
-      "2024-09-01": {
-        "pair": "GBP/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 9.3638,
-        "source_date": "2024-08-30"
-      },
-      "2024-10-01": {
-        "pair": "GBP/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 9.3761,
-        "source_date": "2024-09-30"
-      },
-      "2024-11-01": {
-        "pair": "GBP/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 9.1755,
-        "source_date": "2024-11-01"
-      },
-      "2024-12-01": {
-        "pair": "GBP/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 9.145,
-        "source_date": "2024-11-29"
-      },
-      "2025-01-01": {
-        "pair": "GBP/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 9.0765,
-        "source_date": "2024-12-31"
-      },
-      "2025-02-01": {
-        "pair": "GBP/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 8.9592,
-        "source_date": "2025-01-27"
-      },
-      "2025-03-01": {
-        "pair": "GBP/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 9.0994,
-        "source_date": "2025-02-28"
-      },
-      "2025-04-01": {
-        "pair": "GBP/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 9.3054,
-        "source_date": "2025-04-01"
-      },
-      "2025-05-01": {
-        "pair": "GBP/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 9.6867,
-        "source_date": "2025-04-30"
-      },
-      "2025-06-01": {
-        "pair": "GBP/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 9.6844,
-        "source_date": "2025-05-30"
-      },
-      "2025-07-01": {
-        "pair": "GBP/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 9.8197,
-        "source_date": "2025-07-01"
-      },
-      "2025-08-01": {
-        "pair": "GBP/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 9.4701,
-        "source_date": "2025-08-01"
-      },
-      "2025-09-01": {
-        "pair": "GBP/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 9.6061,
-        "source_date": "2025-09-01"
-      },
-      "2025-10-01": {
-        "pair": "GBP/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 9.5514,
-        "source_date": "2025-09-30"
-      },
-      "2025-11-01": {
-        "pair": "GBP/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 9.3414,
-        "source_date": "2025-10-31"
-      },
-      "2025-12-01": {
-        "pair": "GBP/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 9.3616,
-        "source_date": "2025-12-01"
-      },
-      "2026-01-01": {
-        "pair": "GBP/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 9.4346,
-        "source_date": "2025-12-31"
-      },
-      "2026-02-01": {
-        "pair": "GBP/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 9.608,
-        "source_date": "2026-01-30"
-      },
-      "2026-03-01": {
-        "pair": "GBP/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 9.2709,
-        "source_date": "2026-02-27"
-      },
-      "2026-04-01": {
-        "pair": "GBP/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 9.133,
-        "source_date": "2026-04-01"
-      },
-      "2026-05-01": {
-        "pair": "GBP/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 9.2416,
-        "source_date": "2026-04-30"
-      },
-      "2026-06-01": {
-        "pair": "GBP/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 9.1339,
-        "source_date": "2026-06-01"
-      },
-      "2026-07-01": {
-        "pair": "GBP/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 9.0145,
-        "source_date": "2026-06-30"
-      }
-    },
-    "HKD": {
-      "2023-01-01": {
-        "pair": "HKD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 0.89327,
-        "source_date": "2022-12-30"
-      },
-      "2023-02-01": {
-        "pair": "HKD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 0.86084,
-        "source_date": "2023-02-01"
-      },
-      "2023-03-01": {
-        "pair": "HKD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 0.88416,
-        "source_date": "2023-03-01"
-      },
-      "2023-04-01": {
-        "pair": "HKD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 0.87541,
-        "source_date": "2023-03-31"
-      },
-      "2023-05-01": {
-        "pair": "HKD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 0.88206,
-        "source_date": "2023-04-28"
-      },
-      "2023-06-01": {
-        "pair": "HKD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 0.90624,
-        "source_date": "2023-06-01"
-      },
-      "2023-07-01": {
-        "pair": "HKD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 0.92198,
-        "source_date": "2023-06-30"
-      },
-      "2023-08-01": {
-        "pair": "HKD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 0.914,
-        "source_date": "2023-08-01"
-      },
-      "2023-09-01": {
-        "pair": "HKD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 0.91551,
-        "source_date": "2023-09-01"
-      },
-      "2023-10-01": {
-        "pair": "HKD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 0.91763,
-        "source_date": "2023-09-28"
-      },
-      "2023-11-01": {
-        "pair": "HKD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 0.91727,
-        "source_date": "2023-11-01"
-      },
-      "2023-12-01": {
-        "pair": "HKD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 0.91022,
-        "source_date": "2023-12-01"
-      },
-      "2024-01-01": {
-        "pair": "HKD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 0.90622,
-        "source_date": "2023-12-29"
-      },
-      "2024-02-01": {
-        "pair": "HKD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 0.90879,
-        "source_date": "2024-02-01"
-      },
-      "2024-03-01": {
-        "pair": "HKD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 0.90772,
-        "source_date": "2024-03-01"
-      },
-      "2024-04-01": {
-        "pair": "HKD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 0.90644,
-        "source_date": "2024-04-01"
-      },
-      "2024-05-01": {
-        "pair": "HKD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 0.90805,
-        "source_date": "2024-04-30"
-      },
-      "2024-06-01": {
-        "pair": "HKD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 0.90927,
-        "source_date": "2024-05-31"
-      },
-      "2024-07-01": {
-        "pair": "HKD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 0.91261,
-        "source_date": "2024-07-01"
-      },
-      "2024-08-01": {
-        "pair": "HKD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 0.91283,
-        "source_date": "2024-08-01"
-      },
-      "2024-09-01": {
-        "pair": "HKD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 0.91222,
-        "source_date": "2024-08-30"
-      },
-      "2024-10-01": {
-        "pair": "HKD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 0.90179,
-        "source_date": "2024-09-30"
-      },
-      "2024-11-01": {
-        "pair": "HKD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 0.915,
-        "source_date": "2024-11-01"
-      },
-      "2024-12-01": {
-        "pair": "HKD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 0.92355,
-        "source_date": "2024-11-29"
-      },
-      "2025-01-01": {
-        "pair": "HKD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 0.92604,
-        "source_date": "2024-12-31"
-      },
-      "2025-02-01": {
-        "pair": "HKD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 0.92055,
-        "source_date": "2025-01-27"
-      },
-      "2025-03-01": {
-        "pair": "HKD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 0.9226,
-        "source_date": "2025-02-28"
-      },
-      "2025-04-01": {
-        "pair": "HKD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 0.92257,
-        "source_date": "2025-04-01"
-      },
-      "2025-05-01": {
-        "pair": "HKD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 0.92813,
-        "source_date": "2025-04-30"
-      },
-      "2025-06-01": {
-        "pair": "HKD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 0.91642,
-        "source_date": "2025-05-30"
-      },
-      "2025-07-01": {
-        "pair": "HKD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 0.91126,
-        "source_date": "2025-07-01"
-      },
-      "2025-08-01": {
-        "pair": "HKD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 0.91079,
-        "source_date": "2025-08-01"
-      },
-      "2025-09-01": {
-        "pair": "HKD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 0.91174,
-        "source_date": "2025-09-01"
-      },
-      "2025-10-01": {
-        "pair": "HKD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 0.91298,
-        "source_date": "2025-09-30"
-      },
-      "2025-11-01": {
-        "pair": "HKD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 0.91227,
-        "source_date": "2025-10-31"
-      },
-      "2025-12-01": {
-        "pair": "HKD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 0.90877,
-        "source_date": "2025-12-01"
-      },
-      "2026-01-01": {
-        "pair": "HKD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 0.90322,
-        "source_date": "2025-12-31"
-      },
-      "2026-02-01": {
-        "pair": "HKD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 0.89262,
-        "source_date": "2026-01-30"
-      },
-      "2026-03-01": {
-        "pair": "HKD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 0.88484,
-        "source_date": "2026-02-27"
-      },
-      "2026-04-01": {
-        "pair": "HKD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 0.88065,
-        "source_date": "2026-04-01"
-      },
-      "2026-05-01": {
-        "pair": "HKD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 0.87581,
-        "source_date": "2026-04-30"
-      },
-      "2026-06-01": {
-        "pair": "HKD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 0.86986,
-        "source_date": "2026-06-01"
-      },
-      "2026-07-01": {
-        "pair": "HKD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 0.86855,
-        "source_date": "2026-06-30"
-      }
-    },
+    "EUR": {},
+    "GBP": {},
+    "HKD": {},
     "HUF": {},
     "JPY": {},
     "KRW": {},
@@ -2031,795 +573,18 @@
     "MXN": {},
     "MYR": {},
     "NOK": {},
-    "NZD": {
-      "2023-01-01": {
-        "pair": "NZD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 4.4162,
-        "source_date": "2022-12-30"
-      },
-      "2023-02-01": {
-        "pair": "NZD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 4.3423,
-        "source_date": "2023-02-01"
-      },
-      "2023-03-01": {
-        "pair": "NZD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 4.2913,
-        "source_date": "2023-03-01"
-      },
-      "2023-04-01": {
-        "pair": "NZD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 4.3069,
-        "source_date": "2023-03-31"
-      },
-      "2023-05-01": {
-        "pair": "NZD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 4.2554,
-        "source_date": "2023-04-28"
-      },
-      "2023-06-01": {
-        "pair": "NZD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 4.2755,
-        "source_date": "2023-06-01"
-      },
-      "2023-07-01": {
-        "pair": "NZD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 4.4003,
-        "source_date": "2023-06-30"
-      },
-      "2023-08-01": {
-        "pair": "NZD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 4.4369,
-        "source_date": "2023-08-01"
-      },
-      "2023-09-01": {
-        "pair": "NZD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 4.3528,
-        "source_date": "2023-09-01"
-      },
-      "2023-10-01": {
-        "pair": "NZD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 4.2929,
-        "source_date": "2023-09-28"
-      },
-      "2023-11-01": {
-        "pair": "NZD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 4.2134,
-        "source_date": "2023-11-01"
-      },
-      "2023-12-01": {
-        "pair": "NZD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 4.3929,
-        "source_date": "2023-12-01"
-      },
-      "2024-01-01": {
-        "pair": "NZD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 4.4991,
-        "source_date": "2023-12-29"
-      },
-      "2024-02-01": {
-        "pair": "NZD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 4.3621,
-        "source_date": "2024-02-01"
-      },
-      "2024-03-01": {
-        "pair": "NZD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 4.3469,
-        "source_date": "2024-03-01"
-      },
-      "2024-04-01": {
-        "pair": "NZD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 4.2773,
-        "source_date": "2024-04-01"
-      },
-      "2024-05-01": {
-        "pair": "NZD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 4.2781,
-        "source_date": "2024-04-30"
-      },
-      "2024-06-01": {
-        "pair": "NZD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 4.3805,
-        "source_date": "2024-05-31"
-      },
-      "2024-07-01": {
-        "pair": "NZD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 4.3758,
-        "source_date": "2024-07-01"
-      },
-      "2024-08-01": {
-        "pair": "NZD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 4.262,
-        "source_date": "2024-08-01"
-      },
-      "2024-09-01": {
-        "pair": "NZD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 4.4552,
-        "source_date": "2024-08-30"
-      },
-      "2024-10-01": {
-        "pair": "NZD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 4.4483,
-        "source_date": "2024-09-30"
-      },
-      "2024-11-01": {
-        "pair": "NZD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 4.2497,
-        "source_date": "2024-11-01"
-      },
-      "2024-12-01": {
-        "pair": "NZD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 4.2553,
-        "source_date": "2024-11-29"
-      },
-      "2025-01-01": {
-        "pair": "NZD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 4.0955,
-        "source_date": "2024-12-31"
-      },
-      "2025-02-01": {
-        "pair": "NZD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 4.1071,
-        "source_date": "2025-01-27"
-      },
-      "2025-03-01": {
-        "pair": "NZD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 4.0806,
-        "source_date": "2025-02-28"
-      },
-      "2025-04-01": {
-        "pair": "NZD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 4.096,
-        "source_date": "2025-04-01"
-      },
-      "2025-05-01": {
-        "pair": "NZD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 4.2996,
-        "source_date": "2025-04-30"
-      },
-      "2025-06-01": {
-        "pair": "NZD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 4.2866,
-        "source_date": "2025-05-30"
-      },
-      "2025-07-01": {
-        "pair": "NZD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 4.3568,
-        "source_date": "2025-07-01"
-      },
-      "2025-08-01": {
-        "pair": "NZD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 4.2287,
-        "source_date": "2025-08-01"
-      },
-      "2025-09-01": {
-        "pair": "NZD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 4.1963,
-        "source_date": "2025-09-01"
-      },
-      "2025-10-01": {
-        "pair": "NZD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 4.1087,
-        "source_date": "2025-09-30"
-      },
-      "2025-11-01": {
-        "pair": "NZD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 4.0789,
-        "source_date": "2025-10-31"
-      },
-      "2025-12-01": {
-        "pair": "NZD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 4.0535,
-        "source_date": "2025-12-01"
-      },
-      "2026-01-01": {
-        "pair": "NZD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 4.052,
-        "source_date": "2025-12-31"
-      },
-      "2026-02-01": {
-        "pair": "NZD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 4.2233,
-        "source_date": "2026-01-30"
-      },
-      "2026-03-01": {
-        "pair": "NZD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 4.1018,
-        "source_date": "2026-02-27"
-      },
-      "2026-04-01": {
-        "pair": "NZD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 3.9624,
-        "source_date": "2026-04-01"
-      },
-      "2026-05-01": {
-        "pair": "NZD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 4.0,
-        "source_date": "2026-04-30"
-      },
-      "2026-06-01": {
-        "pair": "NZD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 4.0589,
-        "source_date": "2026-06-01"
-      },
-      "2026-07-01": {
-        "pair": "NZD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 3.8414,
-        "source_date": "2026-06-30"
-      }
-    },
+    "NZD": {},
     "PLN": {},
     "RUB": {},
     "SAR": {},
     "SEK": {},
-    "SGD": {
-      "2023-01-01": {
-        "pair": "SGD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 5.1831,
-        "source_date": "2022-12-30"
-      },
-      "2023-02-01": {
-        "pair": "SGD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 5.1372,
-        "source_date": "2023-02-01"
-      },
-      "2023-03-01": {
-        "pair": "SGD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 5.1488,
-        "source_date": "2023-03-01"
-      },
-      "2023-04-01": {
-        "pair": "SGD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 5.176,
-        "source_date": "2023-03-31"
-      },
-      "2023-05-01": {
-        "pair": "SGD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 5.1862,
-        "source_date": "2023-04-28"
-      },
-      "2023-06-01": {
-        "pair": "SGD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 5.252,
-        "source_date": "2023-06-01"
-      },
-      "2023-07-01": {
-        "pair": "SGD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 5.3442,
-        "source_date": "2023-06-30"
-      },
-      "2023-08-01": {
-        "pair": "SGD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 5.3745,
-        "source_date": "2023-08-01"
-      },
-      "2023-09-01": {
-        "pair": "SGD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 5.3841,
-        "source_date": "2023-09-01"
-      },
-      "2023-10-01": {
-        "pair": "SGD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 5.2599,
-        "source_date": "2023-09-28"
-      },
-      "2023-11-01": {
-        "pair": "SGD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 5.2693,
-        "source_date": "2023-11-01"
-      },
-      "2023-12-01": {
-        "pair": "SGD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 5.3265,
-        "source_date": "2023-12-01"
-      },
-      "2024-01-01": {
-        "pair": "SGD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 5.3772,
-        "source_date": "2023-12-29"
-      },
-      "2024-02-01": {
-        "pair": "SGD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 5.3151,
-        "source_date": "2024-02-01"
-      },
-      "2024-03-01": {
-        "pair": "SGD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 5.291,
-        "source_date": "2024-03-01"
-      },
-      "2024-04-01": {
-        "pair": "SGD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 5.2835,
-        "source_date": "2024-04-01"
-      },
-      "2024-05-01": {
-        "pair": "SGD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 5.241,
-        "source_date": "2024-04-30"
-      },
-      "2024-06-01": {
-        "pair": "SGD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 5.2849,
-        "source_date": "2024-05-31"
-      },
-      "2024-07-01": {
-        "pair": "SGD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 5.2713,
-        "source_date": "2024-07-01"
-      },
-      "2024-08-01": {
-        "pair": "SGD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 5.3416,
-        "source_date": "2024-08-01"
-      },
-      "2024-09-01": {
-        "pair": "SGD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 5.4588,
-        "source_date": "2024-08-30"
-      },
-      "2024-10-01": {
-        "pair": "SGD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 5.4731,
-        "source_date": "2024-09-30"
-      },
-      "2024-11-01": {
-        "pair": "SGD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 5.3892,
-        "source_date": "2024-11-01"
-      },
-      "2024-12-01": {
-        "pair": "SGD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 5.3712,
-        "source_date": "2024-11-29"
-      },
-      "2025-01-01": {
-        "pair": "SGD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 5.3214,
-        "source_date": "2024-12-31"
-      },
-      "2025-02-01": {
-        "pair": "SGD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 5.3376,
-        "source_date": "2025-01-27"
-      },
-      "2025-03-01": {
-        "pair": "SGD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 5.3522,
-        "source_date": "2025-02-28"
-      },
-      "2025-04-01": {
-        "pair": "SGD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 5.3601,
-        "source_date": "2025-04-01"
-      },
-      "2025-05-01": {
-        "pair": "SGD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 5.5219,
-        "source_date": "2025-04-30"
-      },
-      "2025-06-01": {
-        "pair": "SGD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 5.5783,
-        "source_date": "2025-05-30"
-      },
-      "2025-07-01": {
-        "pair": "SGD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 5.6287,
-        "source_date": "2025-07-01"
-      },
-      "2025-08-01": {
-        "pair": "SGD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 5.5248,
-        "source_date": "2025-08-01"
-      },
-      "2025-09-01": {
-        "pair": "SGD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 5.541,
-        "source_date": "2025-09-01"
-      },
-      "2025-10-01": {
-        "pair": "SGD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 5.5131,
-        "source_date": "2025-09-30"
-      },
-      "2025-11-01": {
-        "pair": "SGD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 5.4615,
-        "source_date": "2025-10-31"
-      },
-      "2025-12-01": {
-        "pair": "SGD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 5.4569,
-        "source_date": "2025-12-01"
-      },
-      "2026-01-01": {
-        "pair": "SGD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 5.4586,
-        "source_date": "2025-12-31"
-      },
-      "2026-02-01": {
-        "pair": "SGD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 5.5061,
-        "source_date": "2026-01-30"
-      },
-      "2026-03-01": {
-        "pair": "SGD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 5.4488,
-        "source_date": "2026-02-27"
-      },
-      "2026-04-01": {
-        "pair": "SGD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 5.3726,
-        "source_date": "2026-04-01"
-      },
-      "2026-05-01": {
-        "pair": "SGD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 5.3518,
-        "source_date": "2026-04-30"
-      },
-      "2026-06-01": {
-        "pair": "SGD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 5.3197,
-        "source_date": "2026-06-01"
-      },
-      "2026-07-01": {
-        "pair": "SGD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 5.2605,
-        "source_date": "2026-06-30"
-      }
-    },
+    "SGD": {},
     "THB": {},
     "TRY": {},
-    "USD": {
-      "2023-01-01": {
-        "pair": "USD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 6.9646,
-        "source_date": "2022-12-30"
-      },
-      "2023-02-01": {
-        "pair": "USD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 6.7492,
-        "source_date": "2023-02-01"
-      },
-      "2023-03-01": {
-        "pair": "USD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 6.94,
-        "source_date": "2023-03-01"
-      },
-      "2023-04-01": {
-        "pair": "USD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 6.8717,
-        "source_date": "2023-03-31"
-      },
-      "2023-05-01": {
-        "pair": "USD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 6.924,
-        "source_date": "2023-04-28"
-      },
-      "2023-06-01": {
-        "pair": "USD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 7.0965,
-        "source_date": "2023-06-01"
-      },
-      "2023-07-01": {
-        "pair": "USD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 7.2258,
-        "source_date": "2023-06-30"
-      },
-      "2023-08-01": {
-        "pair": "USD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 7.1283,
-        "source_date": "2023-08-01"
-      },
-      "2023-09-01": {
-        "pair": "USD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 7.1788,
-        "source_date": "2023-09-01"
-      },
-      "2023-10-01": {
-        "pair": "USD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 7.1798,
-        "source_date": "2023-09-28"
-      },
-      "2023-11-01": {
-        "pair": "USD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 7.1778,
-        "source_date": "2023-11-01"
-      },
-      "2023-12-01": {
-        "pair": "USD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 7.1104,
-        "source_date": "2023-12-01"
-      },
-      "2024-01-01": {
-        "pair": "USD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 7.0827,
-        "source_date": "2023-12-29"
-      },
-      "2024-02-01": {
-        "pair": "USD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 7.1049,
-        "source_date": "2024-02-01"
-      },
-      "2024-03-01": {
-        "pair": "USD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 7.1059,
-        "source_date": "2024-03-01"
-      },
-      "2024-04-01": {
-        "pair": "USD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 7.0938,
-        "source_date": "2024-04-01"
-      },
-      "2024-05-01": {
-        "pair": "USD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 7.1063,
-        "source_date": "2024-04-30"
-      },
-      "2024-06-01": {
-        "pair": "USD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 7.1088,
-        "source_date": "2024-05-31"
-      },
-      "2024-07-01": {
-        "pair": "USD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 7.1265,
-        "source_date": "2024-07-01"
-      },
-      "2024-08-01": {
-        "pair": "USD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 7.1323,
-        "source_date": "2024-08-01"
-      },
-      "2024-09-01": {
-        "pair": "USD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 7.1124,
-        "source_date": "2024-08-30"
-      },
-      "2024-10-01": {
-        "pair": "USD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 7.0074,
-        "source_date": "2024-09-30"
-      },
-      "2024-11-01": {
-        "pair": "USD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 7.1135,
-        "source_date": "2024-11-01"
-      },
-      "2024-12-01": {
-        "pair": "USD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 7.1877,
-        "source_date": "2024-11-29"
-      },
-      "2025-01-01": {
-        "pair": "USD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 7.1884,
-        "source_date": "2024-12-31"
-      },
-      "2025-02-01": {
-        "pair": "USD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 7.1698,
-        "source_date": "2025-01-27"
-      },
-      "2025-03-01": {
-        "pair": "USD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 7.1738,
-        "source_date": "2025-02-28"
-      },
-      "2025-04-01": {
-        "pair": "USD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 7.1775,
-        "source_date": "2025-04-01"
-      },
-      "2025-05-01": {
-        "pair": "USD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 7.2014,
-        "source_date": "2025-04-30"
-      },
-      "2025-06-01": {
-        "pair": "USD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 7.1848,
-        "source_date": "2025-05-30"
-      },
-      "2025-07-01": {
-        "pair": "USD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 7.1534,
-        "source_date": "2025-07-01"
-      },
-      "2025-08-01": {
-        "pair": "USD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 7.1496,
-        "source_date": "2025-08-01"
-      },
-      "2025-09-01": {
-        "pair": "USD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 7.1072,
-        "source_date": "2025-09-01"
-      },
-      "2025-10-01": {
-        "pair": "USD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 7.1055,
-        "source_date": "2025-09-30"
-      },
-      "2025-11-01": {
-        "pair": "USD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 7.088,
-        "source_date": "2025-10-31"
-      },
-      "2025-12-01": {
-        "pair": "USD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 7.0759,
-        "source_date": "2025-12-01"
-      },
-      "2026-01-01": {
-        "pair": "USD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 7.0288,
-        "source_date": "2025-12-31"
-      },
-      "2026-02-01": {
-        "pair": "USD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 6.9678,
-        "source_date": "2026-01-30"
-      },
-      "2026-03-01": {
-        "pair": "USD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 6.9228,
-        "source_date": "2026-02-27"
-      },
-      "2026-04-01": {
-        "pair": "USD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 6.9025,
-        "source_date": "2026-04-01"
-      },
-      "2026-05-01": {
-        "pair": "USD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 6.8628,
-        "source_date": "2026-04-30"
-      },
-      "2026-06-01": {
-        "pair": "USD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 6.8167,
-        "source_date": "2026-06-01"
-      },
-      "2026-07-01": {
-        "pair": "USD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 6.8109,
-        "source_date": "2026-06-30"
-      }
-    },
+    "USD": {},
     "ZAR": {}
   },
   "rule": "For each currency and report month, use the RMB central parity rate on the first calendar day of the month; if unavailable, use the latest trading day before that date. Rates are stored as CNY per 1 unit of foreign currency.",
   "source": "ChinaMoney/CFETS RMB central parity rate",
-  "updated_at": "2026-06-30T06:36:35Z"
+  "updated_at": "2026-07-01T06:49:22Z"
 }
