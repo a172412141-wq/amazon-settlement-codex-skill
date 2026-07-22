@@ -453,8 +453,8 @@
       "2026-08-01": {
         "pair": "AUD/CNY",
         "quote_unit_adjusted": "1",
-        "rate": 4.7468,
-        "source_date": "2026-07-21"
+        "rate": 4.7476,
+        "source_date": "2026-07-22"
       }
     },
     "CAD": {
@@ -719,8 +719,8 @@
       "2026-08-01": {
         "pair": "CAD/CNY",
         "quote_unit_adjusted": "1",
-        "rate": 4.8176,
-        "source_date": "2026-07-21"
+        "rate": 4.8066,
+        "source_date": "2026-07-22"
       }
     },
     "CHF": {
@@ -985,8 +985,8 @@
       "2026-08-01": {
         "pair": "CHF/CNY",
         "quote_unit_adjusted": "1",
-        "rate": 8.3734,
-        "source_date": "2026-07-21"
+        "rate": 8.3466,
+        "source_date": "2026-07-22"
       }
     },
     "CNY": {
@@ -1530,8 +1530,8 @@
       "2026-08-01": {
         "pair": "EUR/CNY",
         "quote_unit_adjusted": "1",
-        "rate": 7.7418,
-        "source_date": "2026-07-21"
+        "rate": 7.7345,
+        "source_date": "2026-07-22"
       }
     },
     "GBP": {
@@ -1796,8 +1796,8 @@
       "2026-08-01": {
         "pair": "GBP/CNY",
         "quote_unit_adjusted": "1",
-        "rate": 9.1083,
-        "source_date": "2026-07-21"
+        "rate": 9.0744,
+        "source_date": "2026-07-22"
       }
     },
     "HKD": {
@@ -2062,8 +2062,8 @@
       "2026-08-01": {
         "pair": "HKD/CNY",
         "quote_unit_adjusted": "1",
-        "rate": 0.86628,
-        "source_date": "2026-07-21"
+        "rate": 0.86636,
+        "source_date": "2026-07-22"
       }
     },
     "HUF": {},
@@ -2335,8 +2335,8 @@
       "2026-08-01": {
         "pair": "NZD/CNY",
         "quote_unit_adjusted": "1",
-        "rate": 3.9678,
-        "source_date": "2026-07-21"
+        "rate": 3.9509,
+        "source_date": "2026-07-22"
       }
     },
     "PLN": {},
@@ -2605,8 +2605,8 @@
       "2026-08-01": {
         "pair": "SGD/CNY",
         "quote_unit_adjusted": "1",
-        "rate": 5.2541,
-        "source_date": "2026-07-21"
+        "rate": 5.2501,
+        "source_date": "2026-07-22"
       }
     },
     "THB": {},
@@ -2873,13 +2873,13 @@
       "2026-08-01": {
         "pair": "USD/CNY",
         "quote_unit_adjusted": "1",
-        "rate": 6.7917,
-        "source_date": "2026-07-21"
+        "rate": 6.7933,
+        "source_date": "2026-07-22"
       }
     },
     "ZAR": {}
   },
   "rule": "For each currency and report month, use the RMB central parity rate on the first calendar day of the month; if unavailable, use the latest trading day before that date. Rates are stored as CNY per 1 unit of foreign currency.",
   "source": "ChinaMoney/CFETS RMB central parity rate",
-  "updated_at": "2026-07-21T05:32:46Z"
+  "updated_at": "2026-07-22T05:31:52Z"
 }
