@@ -2887,5 +2887,5 @@
   },
   "rule": "For each currency and report month, use the RMB central parity rate on the first calendar day of the month; if unavailable, use the latest trading day before that date. Rates are stored as CNY per 1 unit of foreign currency.",
   "source": "ChinaMoney/CFETS RMB central parity rate",
-  "updated_at": "2026-08-12T04:20:06Z"
+  "updated_at": "2026-08-13T04:23:31Z"
 }
