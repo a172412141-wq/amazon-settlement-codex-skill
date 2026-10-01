@@ -1313,6 +1313,24 @@
         "quote_unit_adjusted": "1",
         "rate": 1.0,
         "source_date": "2026-12-01"
+      },
+      "2027-01-01": {
+        "pair": "CNY/CNY",
+        "quote_unit_adjusted": "1",
+        "rate": 1.0,
+        "source_date": "2027-01-01"
+      },
+      "2027-02-01": {
+        "pair": "CNY/CNY",
+        "quote_unit_adjusted": "1",
+        "rate": 1.0,
+        "source_date": "2027-02-01"
+      },
+      "2027-03-01": {
+        "pair": "CNY/CNY",
+        "quote_unit_adjusted": "1",
+        "rate": 1.0,
+        "source_date": "2027-03-01"
       }
     },
     "DKK": {},
@@ -3001,5 +3019,5 @@
   },
   "rule": "For each currency and report month, use the RMB central parity rate on the first calendar day of the month; if unavailable, use the latest trading day before that date. Rates are stored as CNY per 1 unit of foreign currency.",
   "source": "ChinaMoney/CFETS RMB central parity rate",
-  "updated_at": "2026-09-30T08:47:05Z"
+  "updated_at": "2026-10-01T09:10:43Z"
 }
