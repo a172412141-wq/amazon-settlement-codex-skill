@@ -2786,12 +2786,6 @@
     "THB": {},
     "TRY": {},
     "USD": {
-      "2023-01-01": {
-        "pair": "USD/CNY",
-        "quote_unit_adjusted": "1",
-        "rate": 6.9646,
-        "source_date": "2022-12-30"
-      },
       "2023-02-01": {
         "pair": "USD/CNY",
         "quote_unit_adjusted": "1",
@@ -3073,5 +3067,5 @@
   },
   "rule": "For each currency and report month, use the RMB central parity rate on the first calendar day of the month; if unavailable, use the latest trading day before that date. Rates are stored as CNY per 1 unit of foreign currency.",
   "source": "ChinaMoney/CFETS RMB central parity rate",
-  "updated_at": "2026-10-30T08:48:35Z"
+  "updated_at": "2026-10-31T08:35:54Z"
 }
